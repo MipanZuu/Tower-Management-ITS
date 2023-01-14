@@ -18,3 +18,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/signup', [AdminController::class, 'viewSignUp'])->name('viewSignUp');
+
+/*Login*/
+Route::get('/login',[AdminController::class, 'loginpage'])->name('login');
