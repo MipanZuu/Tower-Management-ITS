@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 @section('content')
-<div class="pl-100 bg-white m-auto p-30">
+<div class="container bg-white">
     <div class="">
         <div id="calendar" class=""></div>
     </div>
@@ -24,7 +24,7 @@ $(document).ready(function () {
             center:'title',
             right:'month,agendaWeek,agendaDay'
         },
-        events:'/full-calender',
+        events:'/full-calendar',
         selectable:true,
         selectHelper: true,
         select:function(start, end, allDay)
@@ -38,7 +38,7 @@ $(document).ready(function () {
                 var end = $.fullCalendar.formatDate(end, 'Y-MM-DD HH:mm:ss');
 
                 $.ajax({
-                    url:"/full-calender/action",
+                    url:"/full-calendar/action",
                     type:"POST",
                     data:{
                         title: title,
@@ -62,7 +62,7 @@ $(document).ready(function () {
             var title = event.title;
             var id = event.id;
             $.ajax({
-                url:"/full-calender/action",
+                url:"/full-calendar/action",
                 type:"POST",
                 data:{
                     title: title,
@@ -85,7 +85,7 @@ $(document).ready(function () {
             var title = event.title;
             var id = event.id;
             $.ajax({
-                url:"/full-calender/action",
+                url:"/full-calendar/action",
                 type:"POST",
                 data:{
                     title: title,
@@ -108,7 +108,7 @@ $(document).ready(function () {
             {
                 var id = event.id;
                 $.ajax({
-                    url:"/full-calender/action",
+                    url:"/full-calendar/action",
                     type:"POST",
                     data:{
                         id:id,
