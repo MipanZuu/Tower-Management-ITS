@@ -13,18 +13,19 @@ class AdminController extends Controller
     public function loginPage() {
         return view('welcome');
     }
+
     public function login(Request $request){
         $request->validate([
              'email' => 'required',
              'password' => 'required',
          ]);
-         $cridentials = $request->only('email','password');
-         // dd($cridentials);
-         // dd(Auth::attempt($cridentials));
-         if(Auth::attempt($cridentials)){
-             // dd("salah");
-             return redirect()->route('admin')->withSuccess('Signed in');
-         }
-         return redirect('login')->withErrors('Login details are not valid');
+        //  $cridentials = $request->only('email','password');
+         dd("berhasil login");
+        //  // dd(Auth::attempt($cridentials));
+        //  if(Auth::attempt($cridentials)){
+        //      // dd("salah");
+        //      return redirect()->route('dashboardAdmin')->withSuccess('Signed in');
+        //  }
+        //  return redirect('login')->withErrors('Login details are not valid');
      }
 }
