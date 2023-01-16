@@ -94,16 +94,10 @@
 		</a>
 	</div>
 	<!-- Component End  -->
-	<div class="flex-auto">
-      <div class="flex flex-col">
-        <div class="bg-white-50 min-h-screen align-items-lg-start">
-    <div class="p-10">
-    <div class="bg-white rounded-xl p-10 relative">
+	<main class="h-full pb-16 overflow-y-auto">
+	<div class="pl-40 m-auto">
             @yield('content')
     </div>
-</div>
-</div>
-</div>
-</div>
+	</main>
 </body>
 </html>
