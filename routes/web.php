@@ -26,6 +26,9 @@ Route::post('/loginuser',[AdminController::class, 'login'])->name('login.post');
 Route::get('/admin',[AdminController::class, 'index'])->name('dashboardAdmin');
 Route::post('/logout',[AdminController::class, 'logout'])->name('logout.post');
 
+/*Dashboard*/
+Route::get('/view', [AdminController::class, 'viewPage'])->name('viewClass');
+
 /*Calendar*/
 Route::get('/full-calendar', [CalendarController::class, 'index'])->name('full-calendar');
 Route::post('full-calendar/action', [CalendarController::class, 'action']);

@@ -21,6 +21,10 @@ class AdminController extends Controller
         return view('list-reservasi');
     }
 
+    public function viewPage() {
+        return view ('view');
+    }
+
     public function index()
     {
         if(Auth::check()){
