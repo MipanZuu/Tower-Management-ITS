@@ -28,3 +28,5 @@ Route::post('/logout',[AdminController::class, 'logout'])->name('logout.post');
 
 Route::get('full-calendar', [CalendarController::class, 'index']);
 Route::post('full-calendar/action', [CalendarController::class, 'action']);
+
+Route::get('/list-reservasi',[AdminController::class, 'listReservasi'])->name('list-reservasi');

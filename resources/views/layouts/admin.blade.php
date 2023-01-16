@@ -94,8 +94,8 @@
 		</a>
 	</div>
 	<!-- Component End  -->
-	<main class="h-full pb-16 overflow-y-auto">
-	<div class="pl-40 m-auto">
+	<main class="h-full w-full">
+	<div class="pl-40">
             @yield('content')
     </div>
 	</main>
