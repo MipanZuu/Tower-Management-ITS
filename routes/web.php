@@ -21,4 +21,5 @@ Route::get('/signup', [AdminController::class, 'viewSignUp'])->name('viewSignUp'
 
 /*Login*/
 Route::get('/login',[AdminController::class, 'loginpage'])->name('login');
-Route::post('/login',[AdminController::class, 'login'])->name('login.post');
+Route::post('/loginuser',[AdminController::class, 'login'])->name('login.post');
+Route::get('/admin',[AdminController::class, 'index'])->name('dashboardAdmin');

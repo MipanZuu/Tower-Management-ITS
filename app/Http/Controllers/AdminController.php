@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+
+use App\Models\User;
 
 class AdminController extends Controller
 {
@@ -11,7 +14,18 @@ class AdminController extends Controller
     //     return view ('signup');
     // }
     public function loginPage() {
-        return view('welcome');
+        return view('login');
+    }
+
+    public function index()
+    {
+        if(Auth::check()){
+            $user = Auth::user();
+            if ($user->role == 'Admin'){
+                return view('dashboardAdmin');
+            }
+        }
+        return redirect('login');
     }
 
     public function login(Request $request){
@@ -19,13 +33,14 @@ class AdminController extends Controller
              'email' => 'required',
              'password' => 'required',
          ]);
-        //  $cridentials = $request->only('email','password');
-         dd("berhasil login");
-        //  // dd(Auth::attempt($cridentials));
-        //  if(Auth::attempt($cridentials)){
-        //      // dd("salah");
-        //      return redirect()->route('dashboardAdmin')->withSuccess('Signed in');
-        //  }
-        //  return redirect('login')->withErrors('Login details are not valid');
+         $cridentials = $request->only('email','password');
+        //  dd("berhasil login");
+        //  dd(Auth::attempt($cridentials));
+         if(Auth::attempt($cridentials)){
+             // dd("salah");
+             return redirect()->intended('admin')->withSuccess('Signed in');
+         }
+         return redirect('login')->withErrors('Login details are not valid');
      }
+     
 }
