@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\CalendarController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,3 +25,6 @@ Route::get('/login',[AdminController::class, 'loginpage'])->name('login');
 Route::post('/loginuser',[AdminController::class, 'login'])->name('login.post');
 Route::get('/admin',[AdminController::class, 'index'])->name('dashboardAdmin');
 Route::post('/logout',[AdminController::class, 'logout'])->name('logout.post');
+
+Route::get('full-calendar', [CalendarController::class, 'index']);
+Route::post('full-calendar/action', [CalendarController::class, 'action']);
