@@ -20,12 +20,17 @@
 </head>
 <body class="bg-white-800 font-sans leading-normal tracking-normal">
 
-	<nav class="flex items-center justify-between flex-wrap bg-blue-900 p-6 fixed w-full z-10 top-0">
+	<nav class="flex items-center justify-between flex-wrap bg-blue-900 p-6 fixed w-full z-10 top-0 sticky">
 		<div class="flex items-center flex-shrink-0 text-white mr-6">
+		<div>
+			<img class="h-20 w-20" src="pictures/itslogo.png" alt="Logo ITS">
+		</div>
+		<div>
 			<a class="text-white no-underline hover:text-white hover:no-underline" href="#">
-				<span class="text-2xl pl-2"><i class="em em-grinning"></i>TOWER ITS</span>
+				<span class="text-2xl pl-2"><i class="em em-grinning"></i> RESERVASI TOWER ITS</span>
 			</a>
 		</div>
+	</div>
 
 		<div class="block lg:hidden">
 			<button id="nav-toggle" class="flex items-center px-3 py-2 border rounded text-gray-500 border-gray-600 hover:text-white hover:border-white">
@@ -36,24 +41,41 @@
 		<div class="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden lg:block pt-6 lg:pt-0" id="nav-content">
 			<ul class="list-reset lg:flex justify-end flex-1 items-center">
 				<li class="mr-3">
-					<a class="inline-block py-2 px-4 text-white no-underline" href="#">Home</a>
+					<a class="inline-block py-2 px-4 text-yellow-300 no-underline" href="#">Home</a>
 				</li>
 				<li class="mr-3">
-					<a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-4" href="#">Jadwal</a>
+					<a class="inline-block text-white no-underline hover:text-gray-200 hover:text-underline py-2 px-4" href="#">Jadwal</a>
 				</li>
 				<li class="mr-3">
-					<a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-4" href="#">Panduan</a>
+					<a class="inline-block text-white no-underline hover:text-gray-200 hover:text-underline py-2 px-4" href="#">Panduan</a>
 				</li>
 				<li class="mr-3">
-					<a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-4" href="#">Staff</a>
+					<a class="inline-block text-white no-underline hover:text-gray-200 hover:text-underline py-2 px-4" href="#">Staff</a>
 				</li>
 			</ul>
 		</div>
 	</nav>
 
 	<!--Container-->
-	<div class="container shadow-lg mx-auto bg-white mt-24 md:mt-18">
+	<div class="container  mx-auto bg-white  md:mt-18">
+		
+			<div class=" mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
+			  <div class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
 
+				<h1 class="sm:text-4xl text-8xl mb-4 font-bold text-gray-900">Welcome To 
+				  <br class="hidden lg:inline-block">Tower ITS
+				</h1>
+		
+				
+				<div class="flex justify-center">
+				  <button class="inline-flex text-white bg-yellow-500 border-0 py-2 px-6 focus:outline-none hover:bg-yellow-600 rounded text-lg">Reservasi Sekarang >></button>
+				  
+				</div>
+			  </div>
+			  <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
+				<img class="object-cover object-center rounded" alt="Tower Mockup" src="pictures/mockup-tower.png">
+			  </div>
+			</div>
 	</div>
 
 	<script>
