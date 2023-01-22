@@ -1,7 +1,20 @@
 @extends('layouts.admin')
 @section('content')   
 
-<div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+<div class="relative overflow-x-auto bg-blue-50 shadow-md sm:rounded-lg">
+    <nav class="flex items-center justify-between flex-wrap bg-blue-50 p-5 fixed w-full z-10 top-0 sticky">
+		<div class="flex items-center flex-shrink-0 text-white  mr-6">
+		<div>
+			<span class="text-black font-bold no-underline hover:text-white hover:no-underline text-2xl pl-2"><i class="em em-grinning"></i>List Reservasi</span>
+		</div>
+	</div>
+    </nav>
+    <div class="">
+    <div class="flex justify-between mx-6 py-2 mt-6">
+        <button class="inline-flex text-white bg-yellow-500 border-0 py-2 px-7 focus:outline-none hover:bg-yellow-600 rounded text-lg">Upload Jadwal ></button>
+        <button class="ml-4 inline-flex text-gray-700 bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg">Button</button>
+      </div>
+    </div>
     <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
         <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
             <tr>
