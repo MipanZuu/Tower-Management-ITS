@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 @section('content')   
 
-<div class="relative overflow-x-auto bg-blue-50 shadow-md sm:rounded-lg">
+<div class="relative overflow-x-auto h-screen bg-blue-50 shadow-md sm:rounded-lg">
     <nav class="flex items-center justify-between flex-wrap bg-blue-50 p-5 fixed w-full z-10 top-0 sticky">
 		<div class="flex items-center flex-shrink-0 text-white  mr-6">
 		<div>
