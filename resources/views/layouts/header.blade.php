@@ -17,6 +17,16 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.js"></script>
         @vite('resources/css/app.css')
+        <style>
+            body {
+                font-family: 'Nunito', sans-serif;
+            }
+			.active {
+				background-color: rgba(255, 255, 0, 0.7);
+				color: white;
+				border-radius: 10px;
+			}
+        </style>
 </head>
 <body class="bg-white-800 font-sans leading-normal tracking-normal">
 
@@ -41,10 +51,10 @@
 		<div class="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden lg:block pt-6 lg:pt-0" id="nav-content">
 			<ul class="list-reset lg:flex justify-end flex-1 items-center">
 				<li class="mr-3">
-					<a class="inline-block py-2 px-4 text-yellow-300 no-underline" href="#">Home</a>
+					<a class="inline-block text-white no-underline hover:text-gray-200 hover:text-underline py-2 px-4 {{ Request::is('welcome') ? 'active': '';}}" href="{{route('home')}}">Home</a>
 				</li>
 				<li class="mr-3">
-					<a class="inline-block py-2 px-4 text-white no-underline" href="#">Reservasi</a>
+					<a class="inline-block text-white no-underline hover:text-gray-200 hover:text-underline py-2 px-4 {{ Request::is('reservasi') ? 'active': '';}}" href="{{route('reservasi')}}">Reservasi</a>
 				</li>
 				<li class="mr-3">
 					<a class="inline-block text-white no-underline hover:text-gray-200 hover:text-underline py-2 px-4" href="#">Jadwal</a>
