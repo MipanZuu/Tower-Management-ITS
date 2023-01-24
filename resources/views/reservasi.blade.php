@@ -15,11 +15,14 @@
 
  <!-- <h1>Reservasi Ruangan</h1> -->
 
-  <div class="container w-full flex flex-wrap mx-auto px-2 pt-8 lg:pt-4 mt-8">
+  <div class="container w-full flex flex-wrap mx-auto px-2 pt-8 lg:pt-4 mt-8 pb-10">
         <!--Section container-->
         <section class="w-full">
             <!--Card-->
             <div id='section' class="p-8 mt-6 lg:mt-0 rounded shadow-lg bg-white">
+                <div class="hero container max-w-screen-lg mx-auto pb-4">
+                    <img class="mx-auto" src="/icons/reservasi1.png" alt="">
+                </div>
                 <div class="pb-10">
                 <h1 class="font-bold text-2xl">Informasi Peminjaman</h1>
                 <p class="text-gray-500">Informasi peminjam dibutuhkan dalam memastikan keaslian peminjaman. Nomor Telepon dan Email dipergunakan untuk menghubungi peminjam saat ruangan tidak dapat dipinjam, atau ketika ruangan yang akan digunakan dialihkan untuk kegiatan lainnya.</p>
@@ -76,7 +79,7 @@
                     <div class="md:flex md:items-center">
                         <div class="md:w-1/3"></div>
                         <div class="md:w-2/3">
-                            <button class="shadow bg-yellow-700 hover:bg-yellow-500 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="button">
+                            <button class="shadow bg-blue-900 hover:bg-blue-700 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="button">
                                 Selanjutnya
                             </button>
                         </div>
