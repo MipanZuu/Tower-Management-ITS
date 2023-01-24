@@ -55,9 +55,10 @@
 				<li class="mr-3">
 					<a class="inline-block text-white no-underline hover:text-gray-200 hover:text-underline py-2 px-4" href="#">Staff</a>
 				</li>
-				<li class="mr-3">
-					<a class="inline-block text-white no-underline hover:text-gray-200 hover:text-underline py-2 px-4" href="#">Logout</a>
-				</li>
+				<form class="flex items-center w-full h-12 px-3 mt-2 rounded  hover:text-gray-300" action="{{route('')}}" method="POST">
+					@csrf
+				<button type="button" class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">Log Out</button>
+			</form>
 			</ul>
 		</div>
 	</nav>
