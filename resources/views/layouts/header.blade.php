@@ -51,10 +51,10 @@
 		<div class="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden lg:block pt-6 lg:pt-0" id="nav-content">
 			<ul class="list-reset lg:flex justify-end flex-1 items-center">
 				<li class="mr-3">
-					<a class="inline-block py-2 px-4 text-yellow-300 no-underline {{ Request::is('welcome') ? 'active': '';}}" href="{{route('home')}}">Home</a>
+					<a class="inline-block text-white no-underline hover:text-gray-200 hover:text-underline py-2 px-4 {{ Request::is('welcome') ? 'active': '';}}" href="{{route('home')}}">Home</a>
 				</li>
 				<li class="mr-3">
-					<a class="inline-block py-2 px-4 text-white no-underline" href="#">Reservasi</a>
+					<a class="inline-block text-white no-underline hover:text-gray-200 hover:text-underline py-2 px-4 {{ Request::is('reservasi') ? 'active': '';}}" href="{{route('reservasi')}}">Reservasi</a>
 				</li>
 				<li class="mr-3">
 					<a class="inline-block text-white no-underline hover:text-gray-200 hover:text-underline py-2 px-4" href="#">Jadwal</a>

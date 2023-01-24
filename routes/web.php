@@ -22,6 +22,7 @@ Route::get('/', function () {
 /*User*/
 Route::get('/signup', [AdminController::class, 'viewSignUp'])->name('viewSignUp');
 Route::get('/welcome', [UserController::class, 'home'])->name('home');
+Route::get('/reservasi', [UserController::class, 'reservasi'])->name('reservasi');
 
 
 /*Login*/
