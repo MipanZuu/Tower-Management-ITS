@@ -13,4 +13,8 @@ class UserController extends Controller
     public function reservasi(){
         return view ('reservasi');
     }
+
+    public function penanggungJawab(){
+        return view ('InformasiPenanggungJawab');
+    }
 }
