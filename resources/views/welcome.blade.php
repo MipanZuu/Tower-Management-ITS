@@ -27,7 +27,7 @@
 		</div>
 		<div>
 			<a class="text-white no-underline hover:text-white hover:no-underline" href="#">
-				<span class="text-2xl pl-2"><i class="em em-grinning"></i> RESERVASI TOWER ITS</span>
+				<span class="text-xl pl-2"><i class="em em-grinning"></i> RESERVASI TOWER ITS</span>
 			</a>
 		</div>
 	</div>
@@ -62,7 +62,7 @@
 			<div class=" mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
 			  <div class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
 
-				<h1 class="sm:text-4xl text-8xl mb-4 font-bold text-gray-900">Welcome To 
+				<h1 class="sm:text-8xl md:text-7xl text-7xl mb-4 font-bold text-gray-900">Welcome To 
 				  <br class="hidden lg:inline-block">Tower ITS
 				</h1>
 		
