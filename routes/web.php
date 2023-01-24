@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CalendarController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,7 +19,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+/*User*/
 Route::get('/signup', [AdminController::class, 'viewSignUp'])->name('viewSignUp');
+Route::get('/welcome', [UserController::class, 'home'])->name('home');
+
 
 /*Login*/
 Route::get('/login',[AdminController::class, 'loginpage'])->name('login');
