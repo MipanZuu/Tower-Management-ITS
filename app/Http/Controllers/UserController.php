@@ -17,4 +17,8 @@ class UserController extends Controller
     public function penanggungJawab(){
         return view ('InformasiPenanggungJawab');
     }
+
+    public function detailPeminjaman(){
+        return view ('detailPeminjaman');
+    }
 }

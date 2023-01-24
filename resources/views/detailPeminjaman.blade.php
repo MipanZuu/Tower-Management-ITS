@@ -30,8 +30,8 @@
                         <p class="text-sm">Step details here<p>
                     </span>
                 </li>
-                <li class="flex items-center text-blue-600 dark:text-blue-500 space-x-2.5">
-                    <span class="flex items-center justify-center w-8 h-8 border border-blue-600 rounded-full shrink-0 dark:border-blue-500">
+                <li class="flex items-center text-gray-500 dark:text-gray-400 space-x-2.5">
+                    <span class="flex items-center justify-center w-8 h-8 border border-gray-500 rounded-full shrink-0 dark:border-gray-400">
                         2
                     </span>
                     <span>
@@ -39,8 +39,8 @@
                         <p class="text-sm">Step details here<p>
                     </span>
                 </li>
-                <li class="flex items-center text-gray-500 dark:text-gray-400 space-x-2.5">
-                    <span class="flex items-center justify-center w-8 h-8 border border-gray-500 rounded-full shrink-0 dark:border-gray-400">
+                <li class="flex items-center text-blue-600 dark:text-blue-500 space-x-2.5">
+                    <span class="flex items-center justify-center w-8 h-8 border border-blue-600 rounded-full shrink-0 dark:border-blue-500">
                         3
                     </span>
                     <span>
@@ -60,64 +60,70 @@
             </ol>
             </div>
                 <div class="pb-10">
-                <h1 class="font-bold text-2xl">Informasi Penanggung Jawab</h1>
-                <p class="text-gray-500">Informasi Penanggung Jawab Utama dan Sekunder dibutuhkan untuk disertakan secara otomatis dalam Surat Ijin Peminjaman.</p>
+                <h1 class="font-bold text-2xl">Detail Peminjaman</h1>
+                <p class="text-gray-500">Ruangan yang akan dipinjam memiliki kapasitas dan fasilitas yang berbeda-beda. Teknisi yang bertanggung jawab terhadap ruangan dapat dilihat di halaman staff. Untuk melihat ketersediaan ruangan dapat dilihat di halaman ruangan</p>
                 </div>
                 <form>
                     <div class="md:flex mb-6">
                         <div class="md:w-1/3">
                             <label class="block text-gray-600 font-bold md:text-left mb-3 md:mb-0 pr-4" for="my-textfield">
-                            Jabatan Penanggung Jawab Utama
+                            Ruangan
                             </label>
                         </div>
                         <div class="md:w-2/3">
-                            <input class="form-input block w-full focus:bg-white border border-gray-300" id="my-textfield" type="text" value="">
-                            <p class="py-2 text-sm text-gray-600">Masukkan jabatan Penanggung Jawab Utama.</p>
+                            <select name="" class="form-input block w-full focus:bg-white border border-gray-300" id="my-select">
+                                <option value="Default">Default</option>
+                                <option value="A">A</option>
+                                <option value="B">B</option>
+                                <option value="C">C</option>
+                            </select>
+
+                            <p class="py-2 text-sm text-gray-600">Pilih Ruangan yang akan Anda gunakan.</p>
                         </div>
                     </div>
 
                     <div class="md:flex mb-6">
                         <div class="md:w-1/3">
                             <label class="block text-gray-600 font-bold md:text-left mb-3 md:mb-0 pr-4" for="my-textfield">
-                            Nama Penanggung Jawab Utama
+                            Tanggal Peminjaman
                             </label>
                         </div>
                         <div class="md:w-2/3">
-                            <input class="form-input block w-full focus:bg-white border border-gray-300" id="my-textfield" type="text" value="">
-                            <p class="py-2 text-sm text-gray-600">Masukkan nama lengkap Penanggung Jawab Utama.</p>
+                            <input class="form-input block w-full focus:bg-white border border-gray-300" id="my-textfield" type="date" value="">
+                            <p class="py-2 text-sm text-gray-600">Pilih tanggal acara Anda (Format: MM-DD-YYYY).</p>
                         </div>
                     </div>
 
                     <div class="md:flex mb-6">
                         <div class="md:w-1/3">
                             <label class="block text-gray-600 font-bold md:text-left mb-3 md:mb-0 pr-4" for="my-textfield">
-                            Jabatan Penanggung Jawab Sekunder
+                            Waktu Mulai Peminjaman
                             </label>
                         </div>
                         <div class="md:w-2/3">
                             <input class="form-input block w-full focus:bg-white border border-gray-300" id="my-textfield" type="text" value="">
-                            <p class="py-2 text-sm text-gray-600">Masukkan jabatan Penanggung Jawab Sekunder.</p>
+                            <p class="py-2 text-sm text-gray-600">Masukkan waktu mulai peminjaman.</p>
                         </div>
                     </div>
 
                     <div class="md:flex mb-6">
                         <div class="md:w-1/3">
                             <label class="block text-gray-600 font-bold md:text-left mb-3 md:mb-0 pr-4" for="my-textfield">
-                            Nama Penanggung Jawab Sekunder
+                            Waktu Selesai Peminjaman
                             </label>
                         </div>
                         <div class="md:w-2/3">
                             <input class="form-input block w-full focus:bg-white border border-gray-300" id="my-textfield" type="text" value="">
-                            <p class="py-2 text-sm text-gray-600">Masukkan nama lengkap Penanggung Jawab Sekunder.</p>
+                            <p class="py-2 text-sm text-gray-600">Masukkan waktu selesai peminjaman.</p>
                         </div>
                     </div>
 
                     <div class="md:flex md:items-center">
                         <div class="md:w-1/3"></div>
                         <div class="md:w-2/3">
-                            <a class="shadow bg-blue-900 hover:bg-blue-700 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" href="{{route('detailPeminjaman')}}">
+                            <button class="shadow bg-blue-900 hover:bg-blue-700 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="button">
                                 Selanjutnya
-                            </a>
+                            </button>
                         </div>
                     </div>
                 </form>
