@@ -21,4 +21,8 @@ class UserController extends Controller
     public function detailPeminjaman(){
         return view ('detailPeminjaman');
     }
+
+    public function detailKegiatan(){
+        return view ('detailKegiatan');
+    }
 }
