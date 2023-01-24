@@ -70,7 +70,7 @@
 	</nav>
 
     <!--Container-->
-	<div class="container  mx-auto bg-white  md:mt-18">
+	<div class="container mx-auto bg-white  md:mt-18">
         @yield ('content')
     </div>
 
