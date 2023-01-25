@@ -63,7 +63,8 @@
                 <h1 class="font-bold text-2xl">Informasi Penanggung Jawab</h1>
                 <p class="text-gray-500">Informasi Penanggung Jawab Utama dan Sekunder dibutuhkan untuk disertakan secara otomatis dalam Surat Ijin Peminjaman.</p>
                 </div>
-                <form>
+                <form action="{{ route('postCreateStepTwo') }}" method="POST">
+                    @csrf
                     <div class="md:flex mb-6">
                         <div class="md:w-1/3">
                             <label class="block text-gray-600 font-bold md:text-left mb-3 md:mb-0 pr-4" for="my-textfield">
@@ -71,7 +72,7 @@
                             </label>
                         </div>
                         <div class="md:w-2/3">
-                            <input class="form-input block w-full focus:bg-white border border-gray-300" id="my-textfield" type="text" value="">
+                            <input class="form-input block w-full focus:bg-white border border-gray-300" id="mainpicposition" name="mainpicposition" type="text" value="">
                             <p class="py-2 text-sm text-gray-600">Masukkan jabatan Penanggung Jawab Utama.</p>
                         </div>
                     </div>
@@ -83,7 +84,7 @@
                             </label>
                         </div>
                         <div class="md:w-2/3">
-                            <input class="form-input block w-full focus:bg-white border border-gray-300" id="my-textfield" type="text" value="">
+                            <input class="form-input block w-full focus:bg-white border border-gray-300" id="mainpicname" name="mainpicname" type="text" value="">
                             <p class="py-2 text-sm text-gray-600">Masukkan nama lengkap Penanggung Jawab Utama.</p>
                         </div>
                     </div>
@@ -95,7 +96,7 @@
                             </label>
                         </div>
                         <div class="md:w-2/3">
-                            <input class="form-input block w-full focus:bg-white border border-gray-300" id="my-textfield" type="text" value="">
+                            <input class="form-input block w-full focus:bg-white border border-gray-300" id="secondpicposition" name="secondpicposition" type="text" value="">
                             <p class="py-2 text-sm text-gray-600">Masukkan jabatan Penanggung Jawab Sekunder.</p>
                         </div>
                     </div>
@@ -107,7 +108,7 @@
                             </label>
                         </div>
                         <div class="md:w-2/3">
-                            <input class="form-input block w-full focus:bg-white border border-gray-300" id="my-textfield" type="text" value="">
+                            <input class="form-input block w-full focus:bg-white border border-gray-300" id="secondpicname" name="secondpicname"  type="text" value="">
                             <p class="py-2 text-sm text-gray-600">Masukkan nama lengkap Penanggung Jawab Sekunder.</p>
                         </div>
                     </div>
@@ -115,9 +116,9 @@
                     <div class="md:flex md:items-center">
                         <div class="md:w-1/3"></div>
                         <div class="md:w-2/3">
-                            <a class="shadow bg-blue-900 hover:bg-blue-700 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" href="{{route('detailPeminjaman')}}">
+                            <button class="shadow bg-blue-900 hover:bg-blue-700 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" >
                                 Selanjutnya
-                            </a>
+                            </button>
                         </div>
                     </div>
                 </form>

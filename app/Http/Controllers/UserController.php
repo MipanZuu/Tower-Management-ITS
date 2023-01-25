@@ -43,6 +43,22 @@ class UserController extends Controller
         return view ('InformasiPenanggungJawab');
     }
 
+    public function postCreateStepTwo(Request $request)
+    {
+        $validatedData = $request->validate([
+            'mainpicposition' => 'required',
+            'mainpicname' => 'required',
+            'secondpicposition' => 'required',
+            'secondpicname' => 'required',
+        ]);
+  
+        $reservasi = $request->session()->get('reservasi');
+        $reservasi->fill($validatedData);
+        $request->session()->put('reservasi', $reservasi);
+  
+        return redirect()->route('detailPeminjaman');
+    }
+
     public function detailPeminjaman(){
         return view ('detailPeminjaman');
     }
