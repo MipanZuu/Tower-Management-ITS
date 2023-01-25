@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('reservasi', function (Blueprint $table) {
+        Schema::create('reservasis', function (Blueprint $table) {
             $table->id('reservationid');
             $table->string('fullname');
             $table->bigInteger('reserverid');
@@ -25,8 +25,8 @@ return new class extends Migration
             $table->string('secondpicname');
             $table->string('roomname');
             $table->date('reservationdate');
-            $table->time('reservationtimestart');
-            $table->time('reservationtimeend');
+            $table->string('reservationstart');
+            $table->string('reservationend');
             $table->string('organization');
             $table->string('eventname');
             $table->string('eventcategory');

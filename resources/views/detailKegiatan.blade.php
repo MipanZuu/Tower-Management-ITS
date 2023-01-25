@@ -63,7 +63,8 @@
                 <h1 class="font-bold text-2xl">Detail Kegiatan</h1>
                 <p class="text-gray-500">Keterangan kegiatan diperlukan untuk memastikan keaslian peminjaman. Nama Acara beserta waktu peminjaman akan ditampilkan di ruangan yang dipinjam, apabila peminjaman disetujui.</p>
                 </div>
-                <form>
+                <form action="{{route('postCreateStepFour')}}" method="POST">
+                    @csrf
                     <div class="md:flex mb-6">
                         <div class="md:w-1/3">
                             <label class="block text-gray-600 font-bold md:text-left mb-3 md:mb-0 pr-4" for="my-textfield">
@@ -71,8 +72,8 @@
                             </label>
                         </div>
                         <div class="md:w-2/3">
-                            <select name="" class="form-input block w-full focus:bg-white border border-gray-300" id="my-select">
-                                <option value="Default">Default</option>
+                            <select name="" class="form-input block w-full focus:bg-white border border-gray-300" id="organization" name="organization">
+                                <option value="">Default</option>
                                 <option value="A">A</option>
                                 <option value="B">B</option>
                                 <option value="C">C</option>
@@ -89,7 +90,7 @@
                             </label>
                         </div>
                         <div class="md:w-2/3">
-                            <input class="form-input block w-full focus:bg-white border border-gray-300" id="my-textfield" type="text" value="">
+                            <input class="form-input block w-full focus:bg-white border border-gray-300" id="eventname" name="eventname" type="text" >
                             <p class="py-2 text-sm text-gray-600">Masukkan nama kegiatan Anda.</p>
                         </div>
                     </div>
@@ -101,8 +102,8 @@
                             </label>
                         </div>
                         <div class="md:w-2/3">
-                            <select name="" class="form-input block w-full focus:bg-white border border-gray-300" id="my-select">
-                                <option value="Default">Default</option>
+                            <select name="" class="form-input block w-full focus:bg-white border border-gray-300" id="eventcategory" name="eventcategory">
+                                <option value="">Default</option>
                                 <option value="A">A</option>
                                 <option value="B">B</option>
                                 <option value="C">C</option>
@@ -119,7 +120,7 @@
                             </label>
                         </div>
                         <div class="md:w-2/3">
-                            <input class="form-input block w-full focus:bg-white border border-gray-300" id="my-textfield" type="text" value="">
+                            <input class="form-input block w-full focus:bg-white border border-gray-300" id="eventdescription" name="eventdescription" type="text" value="">
                             <p class="py-2 text-sm text-gray-600">Deskripsikan kegiatan Anda.</p>
                         </div>
                     </div>
@@ -127,7 +128,7 @@
                     <div class="md:flex md:items-center">
                         <div class="md:w-1/3"></div>
                         <div class="md:w-2/3">
-                            <button class="shadow bg-green-700 hover:bg-green-900 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="button">
+                            <button type="submit" class="shadow bg-green-700 hover:bg-green-900 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="button">
                                 Kirim
                             </button>
                         </div>

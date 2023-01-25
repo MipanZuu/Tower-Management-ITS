@@ -39,8 +39,9 @@ class UserController extends Controller
         return redirect()->route('penanggungJawab');
     }
 
-    public function penanggungJawab(){
-        return view ('InformasiPenanggungJawab');
+    public function penanggungJawab(Request $request){
+        $reservasi = $request->session()->get('reservasi');
+        return view ('InformasiPenanggungJawab',compact('reservasi'));
     }
 
     public function postCreateStepTwo(Request $request)
@@ -59,11 +60,52 @@ class UserController extends Controller
         return redirect()->route('detailPeminjaman');
     }
 
-    public function detailPeminjaman(){
-        return view ('detailPeminjaman');
+    public function detailPeminjaman(Request $request){
+        $reservasi = $request->session()->get('reservasi');
+        return view ('detailPeminjaman',compact('reservasi'));
     }
 
-    public function detailKegiatan(){
-        return view ('detailKegiatan');
+    public function postCreateStepThree(Request $request)
+    {
+        $validatedData = $request->validate([
+            'roomname' => 'required',
+            'reservationdate'=> 'required|date' ,
+            'reservationstart' ,
+            'reservationend' ,
+        ]);
+  
+        $reservasi = $request->session()->get('reservasi');
+        $reservasi->fill($validatedData);
+        $request->session()->put('reservasi', $reservasi);
+  
+        return redirect()->route('detailKegiatan');
     }
+
+    public function detailKegiatan(Request $request){
+        $reservasi = $request->session()->get('reservasi');
+        return view ('detailKegiatan',compact('reservasi'));
+    }
+
+    public function postCreateStepFour(Request $request)
+    {
+        $validatedData = $request->validate([
+            'organization',
+            'eventname' ,
+            'eventcategory',
+            'eventdescription',
+        ]);
+  
+        $reservasi = $request->session()->get('reservasi');
+        $reservasi->fill($validatedData);
+        $request->session()->put('reservasi', $reservasi);
+
+        
+        $reservasi->save();
+  
+        $request->session()->forget('reservasi');
+  
+        return redirect()->route('home');
+    }
+
+
 }

@@ -63,7 +63,8 @@
                 <h1 class="font-bold text-2xl">Detail Peminjaman</h1>
                 <p class="text-gray-500">Ruangan yang akan dipinjam memiliki kapasitas dan fasilitas yang berbeda-beda. Teknisi yang bertanggung jawab terhadap ruangan dapat dilihat di halaman staff. Untuk melihat ketersediaan ruangan dapat dilihat di halaman ruangan</p>
                 </div>
-                <form>
+                <form action="{{route('postCreateStepThree')}}" method="POST">
+                    @csrf
                     <div class="md:flex mb-6">
                         <div class="md:w-1/3">
                             <label class="block text-gray-600 font-bold md:text-left mb-3 md:mb-0 pr-4" for="my-textfield">
@@ -71,8 +72,8 @@
                             </label>
                         </div>
                         <div class="md:w-2/3">
-                            <select name="" class="form-input block w-full focus:bg-white border border-gray-300" id="my-select">
-                                <option value="Default">Default</option>
+                            <select  class="form-input block w-full focus:bg-white border border-gray-300" id="roomname" name="roomname">
+                                <option value="">Default</option>
                                 <option value="A">A</option>
                                 <option value="B">B</option>
                                 <option value="C">C</option>
@@ -85,12 +86,12 @@
                     <div class="md:flex mb-6">
                         <div class="md:w-1/3">
                             <label class="block text-gray-600 font-bold md:text-left mb-3 md:mb-0 pr-4" for="my-textfield">
-                            Tanggal Peminjaman
+                            Tanggal dan Waktu Mulai Peminjaman
                             </label>
                         </div>
                         <div class="md:w-2/3">
-                            <input class="form-input block w-full focus:bg-white border border-gray-300" id="my-textfield" type="date" value="">
-                            <p class="py-2 text-sm text-gray-600">Pilih tanggal acara Anda (Format: MM-DD-YYYY).</p>
+                            <input class="form-input block w-full focus:bg-white border border-gray-300" id="reservationdate" name="reservationdate" type="date" >
+                            <p class="py-2 text-sm text-gray-600">Pilih tanggal acara Anda (Format: DD-MM-YYYY).</p>
                         </div>
                     </div>
 
@@ -101,7 +102,7 @@
                             </label>
                         </div>
                         <div class="md:w-2/3">
-                            <input class="form-input block w-full focus:bg-white border border-gray-300" id="my-textfield" type="text" value="">
+                            <input class="form-input block w-full focus:bg-white border border-gray-300" id="reservationtart" name="reservationtart" type="text" >
                             <p class="py-2 text-sm text-gray-600">Masukkan waktu mulai peminjaman.</p>
                         </div>
                     </div>
@@ -113,7 +114,7 @@
                             </label>
                         </div>
                         <div class="md:w-2/3">
-                            <input class="form-input block w-full focus:bg-white border border-gray-300" id="my-textfield" type="text" value="">
+                            <input class="form-input block w-full focus:bg-white border border-gray-300" id="reservationend" name="reservationend" type="text">
                             <p class="py-2 text-sm text-gray-600">Masukkan waktu selesai peminjaman.</p>
                         </div>
                     </div>
@@ -121,9 +122,9 @@
                     <div class="md:flex md:items-center">
                         <div class="md:w-1/3"></div>
                         <div class="md:w-2/3">
-                            <a class="shadow bg-blue-900 hover:bg-blue-700 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" href="{{route('detailKegiatan')}}">
+                            <button type="submit" class="shadow bg-blue-900 hover:bg-blue-700 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded">
                                 Selanjutnya
-                            </a>
+                            </button>
                         </div>
                     </div>
                 </form>
