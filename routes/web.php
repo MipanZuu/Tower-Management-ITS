@@ -23,6 +23,7 @@ Route::get('/', function () {
 Route::get('/signup', [AdminController::class, 'viewSignUp'])->name('viewSignUp');
 Route::get('/welcome', [UserController::class, 'home'])->name('home');
 Route::get('/reservasi', [UserController::class, 'reservasi'])->name('reservasi');
+Route::post('/reservasipost', [UserController::class, 'postCreateStepOne'])->name('postCreateStepOne');
 Route::get('/reservasi/InformasiPJ', [UserController::class, 'penanggungJawab'])->name('penanggungJawab');
 Route::get('/reservasi/detailPeminjaman', [UserController::class, 'detailPeminjaman'])->name('detailPeminjaman');
 Route::get('/reservasi/detailKegiatan', [UserController::class, 'detailKegiatan'])->name('detailKegiatan');

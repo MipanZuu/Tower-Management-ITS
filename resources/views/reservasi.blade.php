@@ -63,7 +63,8 @@
                 <h1 class="font-bold text-2xl">Informasi Peminjaman</h1>
                 <p class="text-gray-500">Informasi peminjam dibutuhkan dalam memastikan keaslian peminjaman. Nomor Telepon dan Email dipergunakan untuk menghubungi peminjam saat ruangan tidak dapat dipinjam, atau ketika ruangan yang akan digunakan dialihkan untuk kegiatan lainnya.</p>
                 </div>
-                <form>
+                <form action="{{ route('postCreateStepOne') }}" method="POST">
+                    @csrf
                     <div class="md:flex mb-6">
                         <div class="md:w-1/3">
                             <label class="block text-gray-600 font-bold md:text-left mb-3 md:mb-0 pr-4" for="my-textfield">
@@ -116,9 +117,9 @@
                     <div class="md:flex md:items-center">
                         <div class="md:w-1/3"></div>
                         <div class="md:w-2/3">
-                            <a class="shadow bg-blue-900 hover:bg-blue-700 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" href="{{route('penanggungJawab')}}">
+                            <button type="submit" class="shadow bg-blue-900 hover:bg-blue-700 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" >
                                 Selanjutnya
-                            </a>
+                            </button>
                         </div>
                     </div>
                 </form>
