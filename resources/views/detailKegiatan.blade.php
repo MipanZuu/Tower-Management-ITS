@@ -120,7 +120,7 @@
                             </label>
                         </div>
                         <div class="md:w-2/3">
-                            <input class="form-input block w-full focus:bg-white border border-gray-300" id="eventdescription" name="eventdescription" type="text" value="">
+                            <input class="form-input block w-full focus:bg-white border border-gray-300" id="eventdescription" name="eventdescription" type="text">
                             <p class="py-2 text-sm text-gray-600">Deskripsikan kegiatan Anda.</p>
                         </div>
                     </div>
