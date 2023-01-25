@@ -70,8 +70,8 @@ class UserController extends Controller
         $validatedData = $request->validate([
             'roomname' => 'required',
             'reservationdate'=> 'required|date' ,
-            'reservationstart',
-            'reservationend',
+            'reservationstart'=>'required',
+            'reservationend' =>'required',
         ]);
   
         $reservasi = $request->session()->get('reservasi');
@@ -89,10 +89,10 @@ class UserController extends Controller
     public function postCreateStepFour(Request $request)
     {
         $validatedData = $request->validate([
-            'organization',
+            'organization'=>'required',
             'eventname' => 'required',
-            'eventcategory',
-            'eventdescription'=> 'required',
+            'eventcategory'=>'required',
+            'eventdescription' => 'required',
         ]);
   
         $reservasi = $request->session()->get('reservasi');

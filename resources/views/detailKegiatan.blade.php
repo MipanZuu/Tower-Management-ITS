@@ -72,7 +72,7 @@
                             </label>
                         </div>
                         <div class="md:w-2/3">
-                            <select name="" class="form-input block w-full focus:bg-white border border-gray-300" id="organization" name="organization">
+                            <select class="form-input block w-full focus:bg-white border border-gray-300" id="organization" name="organization">
                                 <option value="">Default</option>
                                 <option value="A">A</option>
                                 <option value="B">B</option>
@@ -102,7 +102,7 @@
                             </label>
                         </div>
                         <div class="md:w-2/3">
-                            <select name="" class="form-input block w-full focus:bg-white border border-gray-300" id="eventcategory" name="eventcategory">
+                            <select class="form-input block w-full focus:bg-white border border-gray-300" id="eventcategory" name="eventcategory">
                                 <option value="">Default</option>
                                 <option value="A">A</option>
                                 <option value="B">B</option>

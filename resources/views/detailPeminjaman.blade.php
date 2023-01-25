@@ -102,7 +102,7 @@
                             </label>
                         </div>
                         <div class="md:w-2/3">
-                            <input class="form-input block w-full focus:bg-white border border-gray-300" id="reservationtart" name="reservationtart" type="text" >
+                            <input class="form-input block w-full focus:bg-white border border-gray-300" id="reservationstart" name="reservationstart" type="text" >
                             <p class="py-2 text-sm text-gray-600">Masukkan waktu mulai peminjaman.</p>
                         </div>
                     </div>
