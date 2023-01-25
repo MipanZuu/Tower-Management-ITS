@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('reservasis', function (Blueprint $table) {
-            $table->id();
+            $table->id('reservationid');
             $table->string('fullname');
             $table->bigInteger('reserverid');
             $table->bigInteger('contactnumber');
@@ -24,13 +24,14 @@ return new class extends Migration
             $table->string('secondpicposition');
             $table->string('secondpicname');
             $table->string('roomname');
-            $table->date('reservastiondate');
+            $table->date('reservationdate');
             $table->time('reservationtimestart');
             $table->time('reservationtimeend');
             $table->string('organization');
             $table->string('eventname');
             $table->string('eventcategory');
             $table->string('eventdescription');
+            $table->integer('status')->default('1');
             $table->timestamps();
 
         });
