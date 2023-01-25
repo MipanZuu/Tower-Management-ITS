@@ -70,8 +70,8 @@ class UserController extends Controller
         $validatedData = $request->validate([
             'roomname' => 'required',
             'reservationdate'=> 'required|date' ,
-            'reservationstart' ,
-            'reservationend' ,
+            'reservationstart',
+            'reservationend',
         ]);
   
         $reservasi = $request->session()->get('reservasi');
@@ -90,9 +90,9 @@ class UserController extends Controller
     {
         $validatedData = $request->validate([
             'organization',
-            'eventname' ,
+            'eventname' => 'required',
             'eventcategory',
-            'eventdescription',
+            'eventdescription'=> 'required',
         ]);
   
         $reservasi = $request->session()->get('reservasi');
