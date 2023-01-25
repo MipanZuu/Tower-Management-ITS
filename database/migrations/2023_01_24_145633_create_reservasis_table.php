@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('reservasis', function (Blueprint $table) {
+        Schema::create('reservasi', function (Blueprint $table) {
             $table->id('reservationid');
             $table->string('fullname');
             $table->bigInteger('reserverid');

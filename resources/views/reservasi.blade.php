@@ -71,7 +71,8 @@
                             </label>
                         </div>
                         <div class="md:w-2/3">
-                            <input class="form-input block w-full focus:bg-white border border-gray-300" id="my-textfield" type="text" value="">
+                            <input class="form-input block w-full focus:bg-white border border-gray-300" id="fullname" name="fullname"
+                             type="text" >
                             <p class="py-2 text-sm text-gray-600">Masukkan nama lengkap Anda (max. 100 karakter).</p>
                         </div>
                     </div>
@@ -83,7 +84,7 @@
                             </label>
                         </div>
                         <div class="md:w-2/3">
-                            <input class="form-input block w-full focus:bg-white border border-gray-300" id="my-textfield" type="text" value="">
+                            <input class="form-input block w-full focus:bg-white border border-gray-300" id="reserverid" name="reserverid" type="text">
                             <p class="py-2 text-sm text-gray-600">Masukkan NRP atau NIP Anda.</p>
                         </div>
                     </div>
@@ -95,7 +96,7 @@
                             </label>
                         </div>
                         <div class="md:w-2/3">
-                            <input class="form-input block w-full focus:bg-white border border-gray-300" id="my-textfield" type="text" value="">
+                            <input class="form-input block w-full focus:bg-white border border-gray-300" id="contactnumber" name="contactnumber" type="text">
                             <p class="py-2 text-sm text-gray-600">Masukkan nomor telepon Anda yang dapat dihubungi.</p>
                         </div>
                     </div>
@@ -107,7 +108,7 @@
                             </label>
                         </div>
                         <div class="md:w-2/3">
-                            <input class="form-input block w-full focus:bg-white border border-gray-300" id="my-textfield" type="text" value="">
+                            <input class="form-input block w-full focus:bg-white border border-gray-300" id="email" name="email" type="text" >
                             <p class="py-2 text-sm text-gray-600">Masukkan email Anda.</p>
                         </div>
                     </div>
