@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\reservasi;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
 use App\Models\User;
@@ -17,8 +19,13 @@ class AdminController extends Controller
         return view('login');
     }
 
-    public function listReservasi() {
-        return view('list-reservasi');
+    public function listReservasi(Request $request) {
+        $data = reservasi::where([
+            ['reservationid', '!=', NULL]
+        ])->where(function($query) use ($request){
+            $query->where('fullname', 'LIKE', '%' . $request->term . '%');
+        })->orderBy('reservationid', 'asc')->paginate(10);
+        return view('list-reservasi', ['reservasis'=>$data]);
     }
 
     public function viewPage() {

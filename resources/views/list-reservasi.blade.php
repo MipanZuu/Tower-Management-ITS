@@ -35,24 +35,27 @@
                 </th>
             </tr>
         </thead>
+        
         <tbody>
+            @foreach ($reservasis as $key => $reservasi)
             <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                 <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                    Kelas 1
+                {{$reservasi->roomname}}
                 </th>
                 <td class="px-6 py-4">
-                    07.00-10.30
+                {{$reservasi->reservationdate}}
                 </td>
                 <td class="px-6 py-4">
-                    Denta Bramasta
+                {{$reservasi->fullname}}
                 </td>
                 <td class="px-6 py-4">
-                    Belum Disetujui
+                {{$reservasi->status}}
                 </td>
                 <td class="px-6 py-4 text-right">
                     <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
                 </td>
-            </tr>
+            </tr> 
+            @endforeach
         </tbody>
     </table>
 </div>
