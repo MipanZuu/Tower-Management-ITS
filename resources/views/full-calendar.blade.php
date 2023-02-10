@@ -173,8 +173,7 @@ $(document).ready(function () {
             }
         }
     });
-
+    $('.fc').css('background-color', 'white');
 });
-  
 </script>
 @endsection('content')
