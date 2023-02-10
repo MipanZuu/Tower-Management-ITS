@@ -4,7 +4,7 @@
  <nav class="flex items-center justify-between flex-wrap bg-blue-50 p-5 fixed w-full z-10 top-0 ">
 		<div class="flex items-center flex-shrink-0 text-white  mr-6">
 		<div>
-			<span class="text-black font-bold no-underline hover:text-white hover:no-underline text-2xl pl-2"><i class="em em-grinning"></i>List Reservasi</span>
+			<span class="text-black font-bold no-underline hover:text-white hover:no-underline text-2xl pl-2"><i class="em em-grinning"></i>Jadwal</span>
 		</div>
 	</div>
     </nav>
