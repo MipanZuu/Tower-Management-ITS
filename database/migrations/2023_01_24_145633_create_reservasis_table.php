@@ -23,10 +23,11 @@ return new class extends Migration
             $table->string('mainpicname');
             $table->string('secondpicposition');
             $table->string('secondpicname');
+            $table->integer('floornum');
             $table->string('roomname');
             $table->date('reservationdate');
-            $table->string('reservationstart');
-            $table->string('reservationend');
+            $table->time('reservationstart');
+            $table->time('reservationend');
             $table->string('organization');
             $table->string('eventname');
             $table->string('eventcategory');

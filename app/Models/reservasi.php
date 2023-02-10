@@ -25,6 +25,7 @@ class reservasi extends Model
             'mainpicname',
             'secondpicposition',
             'secondpicname',
+            'floornum',
             'roomname',
             'reservationdate',
             'reservationstart',
