@@ -42,7 +42,7 @@ Route::post('/logout',[AdminController::class, 'logout'])->name('logout.post');
 Route::get('/view', [AdminController::class, 'viewPage'])->name('viewClass');
 
 /*Calendar*/
-Route::get('/full-calendar', [CalendarController::class, 'index'])->name('full-calendar');
+Route::get('full-calendar', [CalendarController::class, 'index'])->name('full-calendar');
 Route::post('full-calendar/action', [CalendarController::class, 'action']);
 
 /*reservasi*/

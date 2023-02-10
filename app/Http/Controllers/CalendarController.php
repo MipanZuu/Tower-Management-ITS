@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use app\Models\Event;
+use App\Models\Event;
 
 class CalendarController extends Controller
 {
