@@ -84,13 +84,14 @@ $(document).ready(function () {
                 var end = $.fullCalendar.formatDate(end, 'Y-MM-DD HH:mm:ss');
 
                 $.ajax({
-                    url:"/full-calendar/action",
+                    url:"full-calendar/action",
                     type:"POST",
                     data:{
                         title: title,
                         start: start,
                         end: end,
-                        type: 'add'
+                        type: 'add',
+                        _token:'{{ csrf_token() }}'
                     },
                     success:function(data)
                     {
@@ -115,7 +116,8 @@ $(document).ready(function () {
                     start: start,
                     end: end,
                     id: id,
-                    type: 'update'
+                    type: 'update',
+                    _token:'{{ csrf_token() }}'
                 },
                 success:function(response)
                 {
@@ -138,7 +140,8 @@ $(document).ready(function () {
                     start: start,
                     end: end,
                     id: id,
-                    type: 'update'
+                    type: 'update',
+                    _token:'{{ csrf_token() }}'
                 },
                 success:function(response)
                 {
@@ -158,7 +161,8 @@ $(document).ready(function () {
                     type:"POST",
                     data:{
                         id:id,
-                        type:"delete"
+                        type:"delete",
+                        _token:'{{ csrf_token() }}'
                     },
                     success:function(response)
                     {
