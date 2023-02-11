@@ -43,6 +43,7 @@ Route::get('/view', [AdminController::class, 'viewPage'])->name('viewClass');
 
 /*Calendar*/
 Route::get('full-calendar', [CalendarController::class, 'index'])->name('full-calendar');
+Route::get('full-calendar/Lantai1', [CalendarController::class, 'lantaiSatu'])->name('lantaiSatu');
 Route::post('full-calendar/action', [CalendarController::class, 'action']);
 
 /*reservasi*/
