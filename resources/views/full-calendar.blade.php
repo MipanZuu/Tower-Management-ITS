@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 @section('content')
-<div class="h-screen bg-blue-50">
- <nav class="flex items-center justify-center flex-wrap  p-5  w-full z-10 top-0 sticky sm:justify-between">
+<div class="relative overflow-x-auto h-screen bg-blue-50 shadow-md sm:rounded-lg">
+    <nav class="flex items-center justify-center flex-wrap p-5 fixed w-full z-10 top-0 sticky sm:justify-between">
 		<div class="flex items-center flex-shrink-0 text-white  mr-6">
 		<div>
 			<span class="text-black font-bold no-underline hover:text-white hover:no-underline text-2xl pl-2"><i class="em em-grinning"></i>Jadwal</span>
@@ -9,7 +9,7 @@
 	</div>
     </nav>
 
-    <div class="py-5 mt-16 ml-9">
+    <div class="py-5 ml-9">
     <div class="inline-flex rounded-md shadow-sm">
         <a href="#" aria-current="page" class="px-4 py-2 text-sm font-medium text-blue-700 bg-white border border-gray-200 rounded-l-lg hover:bg-gray-100 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-blue-500 dark:focus:text-white">
           Semua
