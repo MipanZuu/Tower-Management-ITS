@@ -49,10 +49,21 @@
                 {{$reservasi->fullname}}
                 </td>
                 <td class="px-6 py-4">
-                {{$reservasi->status}}
+                    @if($reservasi->status == 1)
+                    <div class="flex justify-start">
+                        <span class="mt-1.5 mr-1 w-3 h-3 bg-gray-400 rounded-full"></span>
+                        <p class="title-font font-medium mt-0.5  text-gray-600">Perlu Ditinjau</p>
+                      </div>
+                      @elseif($reservasi->status == 2)
+                      <div class="flex justify-start">
+                      <span class="mt-1.5 mr-1 w-3 h-3 bg-green-500 rounded-full"></span>
+                      <p class="title-font mt-0.5 font-medium  text-gray-900">Reservasi Disetujui</p>
+                      </div>
+                    @endif
+                {{-- {{$reservasi->status}} --}}
                 </td>
                 <td class="px-6 py-4 text-right">
-                    <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                    <a href="{{route('detail-reservasi',$reservasi->reservationid)}}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Detail</a>
                 </td>
             </tr> 
             @endforeach

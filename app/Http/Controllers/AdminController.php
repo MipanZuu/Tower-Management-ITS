@@ -28,6 +28,13 @@ class AdminController extends Controller
         return view('list-reservasi', ['reservasis'=>$data]);
     }
 
+    public function DetailReservasi($id) {
+        $data = reservasi::where('reservationid','=',$id)->first();
+        return view('DetailReservasi', ['reservasis'=>$data]);
+    }
+
+    
+
     public function viewPage() {
         return view ('view');
     }
