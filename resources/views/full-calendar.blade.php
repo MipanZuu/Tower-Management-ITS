@@ -1,5 +1,14 @@
 @extends('layouts.admin')
 @section('content')
+<style>
+    .fc-event {
+        width: auto;
+        height: auto;
+        display: flex;
+        flex-wrap: wrap;
+        align-content: center;
+    }
+</style>
 <div class="relative overflow-x-auto h-screen bg-blue-50 shadow-md sm:rounded-lg">
     <nav class="flex items-center justify-center flex-wrap p-5 fixed w-full z-10 top-0 sticky sm:justify-between">
 		<div class="flex items-center flex-shrink-0 text-white  mr-6">
@@ -75,19 +84,21 @@ $(document).ready(function () {
         selectHelper: true,
         select:function(start, end, allDay)
         {
-            var title = prompt('Event Title:');
+            var title = prompt('Event Judul:');
+            var ruangan = prompt('Ruangan Event Berlangsung:');
 
             if(title)
             {
                 var start = $.fullCalendar.formatDate(start, 'Y-MM-DD HH:mm:ss');
-
                 var end = $.fullCalendar.formatDate(end, 'Y-MM-DD HH:mm:ss');
+
 
                 $.ajax({
                     url:"full-calendar/action",
                     type:"POST",
                     data:{
                         title: title,
+                        ruangan: ruangan,
                         start: start,
                         end: end,
                         type: 'add',

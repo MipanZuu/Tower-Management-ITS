@@ -13,7 +13,7 @@ class CalendarController extends Controller
     	{
     		$data = Event::whereDate('start', '>=', $request->start)
                        ->whereDate('end',   '<=', $request->end)
-                       ->get(['id', 'title', 'start', 'end']);
+                       ->get(['id', 'title', 'ruangan', 'start', 'end']);
             return response()->json($data);
     	}
     	return view('full-calendar');
@@ -26,9 +26,10 @@ class CalendarController extends Controller
     		if($request->type == 'add')
     		{
     			$event = Event::create([
-    				'title'		=>	$request->title,
-    				'start'		=>	$request->start,
-    				'end'		=>	$request->end
+    				'title'		=> $request->title,
+					'ruangan'	=> $request->ruangan,
+    				'start'		=> $request->start,
+    				'end'		=> $request->end
     			]);
 
     			return response()->json($event);
@@ -38,6 +39,7 @@ class CalendarController extends Controller
     		{
     			$event = Event::find($request->id)->update([
     				'title'		=>	$request->title,
+					'ruangan'	=> $request->ruangan,
     				'start'		=>	$request->start,
     				'end'		=>	$request->end
     			]);
