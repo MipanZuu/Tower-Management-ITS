@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 @section('content')
 <div class="bg-blue-50 h-screen">
-    <nav class="flex items-center justify-between flex-wrap p-5 fixed w-full z-10 top-0 sticky">
+    <nav class="flex items-center justify-center flex-wrap p-5 fixed w-full z-10 top-0 sticky sm:justify-between">
 		<div class="flex items-center flex-shrink-0 text-white mr-6">
 		<div>
 			<span class="text-black font-bold no-underline hover:text-white hover:no-underline text-2xl pl-2"><i class="em em-grinning"></i>Overview</span>
