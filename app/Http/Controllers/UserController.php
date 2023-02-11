@@ -68,6 +68,7 @@ class UserController extends Controller
     public function postCreateStepThree(Request $request)
     {
         $validatedData = $request->validate([
+            'floornum' => 'required',
             'roomname' => 'required',
             'reservationdate'=> 'required|date' ,
             'reservationstart' => 'required',

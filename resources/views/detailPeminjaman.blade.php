@@ -74,9 +74,9 @@
                         <div class="md:w-2/3">
                             <select  class="form-input block w-full focus:bg-white border border-gray-300" id="floornum" name="floornum">
                                 <option value="">Default</option>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
+                                <option value="Lantai 1">1</option>
+                                <option value="Lantai 2">2</option>
+                                <option value="Lantai 3">3</option>
                             </select>
 
                             <p class="py-2 text-sm text-gray-600">Pilih Lantai dari ruangan yang akan Anda gunakan.</p>
