@@ -13,7 +13,19 @@ class CalendarController extends Controller
     	{
     		$data = Event::whereDate('start', '>=', $request->start)
                        ->whereDate('end',   '<=', $request->end)
-                       ->get(['id', 'title', 'ruangan', 'start', 'end']);
+                       ->get(['id', 'title', 'lantai', 'ruangan', 'start', 'end']);
+            return response()->json($data);
+    	}
+    	return view('full-calendar');
+    }
+
+	public function lantaiSatu(Request $request)
+    {
+    	if($request->ajax())
+    	{
+    		$data = Event::whereDate('start', '>=', $request->start)
+                       ->whereDate('end',   '<=', $request->end)
+                       ->get(['id', 'title', 'lantai', 'ruangan', 'start', 'end']);
             return response()->json($data);
     	}
     	return view('full-calendar');
@@ -27,6 +39,7 @@ class CalendarController extends Controller
     		{
     			$event = Event::create([
     				'title'		=> $request->title,
+					'lantai'	=> $request->lantai,
 					'ruangan'	=> $request->ruangan,
     				'start'		=> $request->start,
     				'end'		=> $request->end
@@ -39,6 +52,7 @@ class CalendarController extends Controller
     		{
     			$event = Event::find($request->id)->update([
     				'title'		=>	$request->title,
+					'lantai'	=> $request->lantai,
 					'ruangan'	=> $request->ruangan,
     				'start'		=>	$request->start,
     				'end'		=>	$request->end

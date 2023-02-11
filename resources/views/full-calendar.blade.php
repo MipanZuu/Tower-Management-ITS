@@ -85,9 +85,10 @@ $(document).ready(function () {
         select:function(start, end, allDay)
         {
             var title = prompt('Event Judul:');
+            var lantai = prompt('Lantai Gedung:');
             var ruangan = prompt('Ruangan Event Berlangsung:');
 
-            if(title)
+            if(title && lantai && ruangan)
             {
                 var start = $.fullCalendar.formatDate(start, 'Y-MM-DD HH:mm:ss');
                 var end = $.fullCalendar.formatDate(end, 'Y-MM-DD HH:mm:ss');
@@ -98,6 +99,7 @@ $(document).ready(function () {
                     type:"POST",
                     data:{
                         title: title,
+                        lantai: lantai,
                         ruangan: ruangan,
                         start: start,
                         end: end,
@@ -118,12 +120,16 @@ $(document).ready(function () {
             var start = $.fullCalendar.formatDate(event.start, 'Y-MM-DD HH:mm:ss');
             var end = $.fullCalendar.formatDate(event.end, 'Y-MM-DD HH:mm:ss');
             var title = event.title;
+            var lantai = event.lantai;
+            var ruangan = event.ruangan;
             var id = event.id;
             $.ajax({
                 url:"/full-calendar/action",
                 type:"POST",
                 data:{
                     title: title,
+                    lantai: lantai,
+                    ruangan: ruangan,
                     start: start,
                     end: end,
                     id: id,
@@ -142,12 +148,16 @@ $(document).ready(function () {
             var start = $.fullCalendar.formatDate(event.start, 'Y-MM-DD HH:mm:ss');
             var end = $.fullCalendar.formatDate(event.end, 'Y-MM-DD HH:mm:ss');
             var title = event.title;
+            var lantai = event.lantai;
+            var ruangan = event.ruangan;
             var id = event.id;
             $.ajax({
                 url:"/full-calendar/action",
                 type:"POST",
                 data:{
                     title: title,
+                    lantai: lantai,
+                    ruangan: ruangan,
                     start: start,
                     end: end,
                     id: id,
