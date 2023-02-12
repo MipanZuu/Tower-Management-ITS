@@ -8,11 +8,6 @@
 		</div>
 	</div>
     </nav>
-    
-
-    {{-- card --}}
-
-
     <div class="container w-full flex flex-wrap mx-auto px-2 pt-8 lg:pt-4 mt-8 pb-10">
         <!--Section container-->
         <section class="w-full">
@@ -197,9 +192,8 @@
                     </div>
 
                 @if($reservasis->status == '1')
-                    <form method="post" action="{{  route('terimaReservasi')  }}">
-                        @csrf
-                        <input type="hidden" id="reservationid" name="reservationid" value="{{$reservasis->reservationid}}">
+                    <form method="post" action="{{  route('terimaReservasi', $reservasis->reservationid)  }}">
+                    {{ csrf_field() }}
                     <div class="md:flex mb-6">
                         <div class="md:w-1/3">
                             <label class="block text-gray-600 font-bold md:text-left mb-3 md:mb-0 pr-4" for="my-textfield">
@@ -220,9 +214,6 @@
                 </form>
                     @endif
             </div>
-
-    {{-- card --}}
-
 
 </div>
 

@@ -35,9 +35,13 @@ class AdminController extends Controller
 
     public function terima(Request $request)
     {    
-        if($request->status==2){
-        reservasi::where('reservationid',$request->id)->update(['status' => $request['status'],]);
-         }
+        $data=reservasi::where('reservationid',$request->id)->first();
+        if($data->status==1)
+        {
+            $data->status = 2;
+            $data->save();
+        }
+        
         return redirect()->back()->with('success','The Booking has successfully been Aprroved to the accountant');
     }
 
