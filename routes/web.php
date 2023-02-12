@@ -49,4 +49,4 @@ Route::post('full-calendar/action', [CalendarController::class, 'action']);
 /*reservasi*/
 Route::get('/list-reservasi',[AdminController::class, 'listReservasi'])->name('list-reservasi');
 Route::get('/detailreservasi/{id}',[AdminController::class, 'DetailReservasi'])->name('detail-reservasi');
-Route::get('/terima/{id}',[AdminController::class, 'terima'])->name('terimaReservasi');
+Route::post('/terima',[AdminController::class, 'terima'])->name('terimaReservasi');

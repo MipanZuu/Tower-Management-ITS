@@ -33,15 +33,11 @@ class AdminController extends Controller
         return view('DetailReservasi', ['reservasis'=>$data]);
     }
 
-    public function terima(Request $request, $id)
+    public function terima(Request $request)
     {    
-        $data=reservasi::where('reservationid',$request->id)->first();
-        if($data->status==1)
-        {
-            $data->status = 2;
-            $data->save();
-        }
-        
+        if($request->status==2){
+        reservasi::where('reservationid',$request->id)->update(['status' => $request['status'],]);
+         }
         return redirect()->back()->with('success','The Booking has successfully been Aprroved to the accountant');
     }
 
