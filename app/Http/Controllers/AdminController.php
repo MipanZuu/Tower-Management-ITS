@@ -35,14 +35,13 @@ class AdminController extends Controller
 
     public function terima(Request $request)
     {    
-        $data=reservasi::where('reservationid',$request->id)->first();
-        if($data->status==1)
-        {
-            $data->status = 2;
-            $data->save();
-        }
-        
-        return redirect()->back()->with('success','The Booking has successfully been Aprroved to the accountant');
+        $request->validate([
+            'status' => 'required',
+        ]);
+        reservasi::where('reservationid', $request->reservationid)->update([
+            'status' => $request['status'],
+        ]);
+        return redirect()->route('list-reservasi')->with('Sukses!','Reservasi telah diubah');
     }
 
     public function viewPage() {

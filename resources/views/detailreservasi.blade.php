@@ -191,9 +191,10 @@
                         </div>
                     </div>
 
-                @if($reservasis->status == '1')
-                    <form method="post" action="{{  route('terimaReservasi', $reservasis->reservationid)  }}">
-                    {{ csrf_field() }}
+                    @if($reservasis->status == '1')
+                    <form method="post" action="{{  route('terimaReservasi')  }}">
+                        @csrf
+                        <input type="hidden" id="reservationid" name="reservationid" value="{{$reservasis->reservationid}}">
                     <div class="md:flex mb-6">
                         <div class="md:w-1/3">
                             <label class="block text-gray-600 font-bold md:text-left mb-3 md:mb-0 pr-4" for="my-textfield">
@@ -214,7 +215,6 @@
                 </form>
                     @endif
             </div>
-
 </div>
 
 @endsection('content')
