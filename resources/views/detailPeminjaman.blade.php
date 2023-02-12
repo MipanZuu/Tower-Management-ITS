@@ -74,9 +74,17 @@
                         <div class="md:w-2/3">
                             <select  class="form-input block w-full focus:bg-white border border-gray-300" id="floornum" name="floornum">
                                 <option value="">Default</option>
-                                <option value="Lantai 1">1</option>
-                                <option value="Lantai 2">2</option>
-                                <option value="Lantai 3">3</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
                             </select>
 
                             <p class="py-2 text-sm text-gray-600">Pilih Lantai dari ruangan yang akan Anda gunakan.</p>
@@ -91,9 +99,27 @@
                         <div class="md:w-2/3">
                             <select  class="form-input block w-full focus:bg-white border border-gray-300" id="roomname" name="roomname">
                                 <option value="">Default</option>
-                                <option value="A">A</option>
-                                <option value="B">B</option>
-                                <option value="C">C</option>
+                                <option value="Kelas 1">Kelas 1</option>
+                                <option value="Kelas 2">Kelas 2</option>
+                                <option value="Kelas 3">Kelas 3</option>
+                                <option value="Kelas 4">Kelas 4</option>
+                                <option value="Kelas 5">Kelas 5</option>
+                                <option value="Kelas 6">Kelas 6</option>
+                                <option value="Kelas 7">Kelas 7</option>
+                                <option value="Kelas 8">Kelas 8</option>
+                                <option value="Kelas 9">Kelas 9</option>
+                                <option value="Kelas 10">Kelas 10</option>
+                                <option value="Kelas 11">Kelas 11</option>
+                                <option value="Kelas 12">Kelas 12</option>
+                                <option value="Kelas 13">Kelas 13</option>
+                                <option value="Kelas 14">Kelas 14</option>
+                                <option value="Kelas 15">Kelas 15</option>
+                                <option value="Kelas 16">Kelas 16</option>
+                                <option value="Kelas 17">Kelas 17</option>
+                                <option value="Kelas 18">Kelas 18</option>
+                                <option value="Kelas 19">Kelas 19</option>
+                                <option value="Kelas 20">Kelas 20</option>
+                                <option value="Ruang Serbaguna">Ruang Serbaguna</option>
                             </select>
 
                             <p class="py-2 text-sm text-gray-600">Pilih Ruangan yang akan Anda gunakan.</p>

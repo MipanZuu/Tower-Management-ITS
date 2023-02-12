@@ -19,6 +19,9 @@
         <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
             <tr>
                 <th scope="col" class="px-6 py-3">
+                    Lantai
+                </th>
+                <th scope="col" class="px-6 py-3">
                     Ruangan
                 </th>
                 <th scope="col" class="px-6 py-3">
@@ -39,6 +42,9 @@
         <tbody>
             @foreach ($reservasis as $key => $reservasi)
             <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                {{$reservasi->floornum}}
+                </th>
                 <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                 {{$reservasi->roomname}}
                 </th>
@@ -51,13 +57,18 @@
                 <td class="px-6 py-4">
                     @if($reservasi->status == 1)
                     <div class="flex justify-start">
-                        <span class="mt-1.5 mr-1 w-3 h-3 bg-gray-400 rounded-full"></span>
+                        <span class="mt-1.5 mr-1 w-3 h-3 bg-yellow-400 rounded-full"></span>
                         <p class="title-font font-medium mt-0.5  text-gray-600">Perlu Ditinjau</p>
                       </div>
                       @elseif($reservasi->status == 2)
                       <div class="flex justify-start">
                       <span class="mt-1.5 mr-1 w-3 h-3 bg-green-500 rounded-full"></span>
                       <p class="title-font mt-0.5 font-medium  text-gray-900">Reservasi Disetujui</p>
+                      </div>
+                      @elseif($reservasi->status == 3)
+                      <div class="flex justify-start">
+                      <span class="mt-1.5 mr-1 w-3 h-3 bg-red-500 rounded-full"></span>
+                      <p class="title-font mt-0.5 font-medium  text-gray-900">Reservasi Ditolak</p>
                       </div>
                     @endif
                 {{-- {{$reservasi->status}} --}}

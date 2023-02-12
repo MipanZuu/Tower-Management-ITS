@@ -74,9 +74,10 @@
                         <div class="md:w-2/3">
                             <select class="form-input block w-full focus:bg-white border border-gray-300" id="organization" name="organization">
                                 <option value="">Default</option>
-                                <option value="A">A</option>
-                                <option value="B">B</option>
-                                <option value="C">C</option>
+                                <option value="BEM">BEM</option>
+                                <option value="Himpunan">Himpunan</option>
+                                <option value="Pribadi">Pribadi</option>
+                                <option value="Lainnya">Lainnya</option>
                             </select>
 
                             <p class="py-2 text-sm text-gray-600">Pilih Organisasi yang Anda wakilkan.</p>
