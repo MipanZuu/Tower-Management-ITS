@@ -196,22 +196,28 @@
                         </div>
                     </div>
 
-                    @if($reservasis->status == '1')
-                    <div class="flex items-end md:flex md:items-center">
-                        <div class="md:w-1/3"></div>
+                @if($reservasis->status == '1')
+                    <form method="post" action="{{  route('terimaReservasi', $reservasis->reservationid)  }}">
+                    {{ csrf_field() }}
+                    <div class="md:flex mb-6">
+                        <div class="md:w-1/3">
+                            <label class="block text-gray-600 font-bold md:text-left mb-3 md:mb-0 pr-4" for="my-textfield">
+                               Deskripsi Kegiatan :
+                            </label>
+                        </div>
                         <div class="md:w-2/3">
-                            <button type="submit" class="shadow bg-red-600 hover:bg-red-500 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" >
-                                Tolak
-                            </button>
+                        <select class="form-input block w-full focus:bg-white border border-gray-300" id="status" name="status">
+                                <option value="1">Pending</option>
+                                <option value="2">Diterima</option>
+                                <option value="3">Ditolak</option>
+                            </select>
                             <button type="submit" class="shadow bg-green-900 hover:bg-green-700 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" >
-                                Terima
+                                Simpan
                             </button>
                         </div>
-                        
                     </div>
+                </form>
                     @endif
-                
-
             </div>
 
     {{-- card --}}

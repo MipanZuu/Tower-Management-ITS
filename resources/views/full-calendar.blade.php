@@ -8,9 +8,7 @@
         flex-wrap: wrap;
         align-content: center;
     }
-    .active {
-		color: blue;
-	}
+
 </style>
 <div class="relative overflow-x-auto h-screen bg-blue-50 shadow-md sm:rounded-lg">
     <nav class="flex items-center justify-center flex-wrap p-5 fixed w-full z-10 top-0 sticky sm:justify-between">

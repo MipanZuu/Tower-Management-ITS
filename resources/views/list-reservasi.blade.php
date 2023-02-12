@@ -63,7 +63,7 @@
                 {{-- {{$reservasi->status}} --}}
                 </td>
                 <td class="px-6 py-4 text-right">
-                    <a href="{{route('detail-reservasi',$reservasi->reservationid)}}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Detail</a>
+                    <a href="{{route('detail-reservasi', $reservasi->reservationid)}}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Detail</a>
                 </td>
             </tr> 
             @endforeach

@@ -19,13 +19,13 @@ class CalendarController extends Controller
     	return view('full-calendar');
     }
 
-	public function lantaiSatu(Request $request)
-    {
+	public function lantaiSatu(Request $request) 
+	{
     	if($request->ajax())
     	{
     		$data = Event::whereDate('start', '>=', $request->start)
                        ->whereDate('end',   '<=', $request->end)
-					   ->where('lantai', 'LIKE', 'Lantai 1')
+					   ->where('lantai', 'LIKE', $request->lantai)
                        ->get(['id', 'title', 'lantai', 'ruangan', 'start', 'end']);
             return response()->json($data);
     	}
