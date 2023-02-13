@@ -11,6 +11,10 @@ class UserController extends Controller
         return view ('welcome');
     }
 
+    public function staffDisplay(){
+        return view ('staffdisplay');
+    }
+
     public function reservasi(Request $request){
         $reservasi = $request->session()->get('reservasi');
         return view ('reservasi',compact('reservasi'));

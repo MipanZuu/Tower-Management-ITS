@@ -63,7 +63,7 @@
 					<a class="inline-block text-white no-underline hover:text-gray-200 hover:text-underline py-2 px-4" href="#">Panduan</a>
 				</li>
 				<li class="mr-3">
-					<a class="inline-block text-white no-underline hover:text-gray-200 hover:text-underline py-2 px-4" href="#">Staff</a>
+					<a class="inline-block text-white no-underline hover:text-gray-200 hover:text-underline py-2 px-4 {{ Request::is('staffdisplay') ? 'active': '';}}" href="{{ route('staffDisplay') }}">Staff</a>
 				</li>
 				<li class="mr-3">
 				<button type="button" class="inline-block text-white no-underline hover:text-gray-200 hover:text-underline py-2 px-4 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">MyITS SSO</button>
@@ -76,7 +76,11 @@
 	<div class="container mx-auto bg-white  md:mt-18">
         @yield ('content')
     </div>
-
+	<footer class="flex items-center justify-between flex-wrap bg-blue-900 z-10 top-0 sticky lg:px-40 sm:px-0">
+		<span class="block text-sm text-white sm:text-center dark:text-gray-400">© 2023 Institut Teknologi Sepuluh Nopember
+		</span>
+		<img class="h-20 w-30" src="/pictures/ITS_Footer.png" alt="">
+	</footer>
 <script>
     //Javascript to toggle the menu
     document.getElementById('nav-toggle').onclick = function(){

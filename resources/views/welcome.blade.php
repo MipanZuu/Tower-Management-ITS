@@ -22,10 +22,4 @@
 				<h1>haha</h1>
 			</div> -->
 			</div>
-			
-	<footer class="flex items-center justify-between flex-wrap bg-blue-900 z-10 top-0 sticky lg:px-40 sm:px-0">
-		<span class="block text-sm text-white sm:text-center dark:text-gray-400">© 2023 Institut Teknologi Sepuluh Nopember
-		</span>
-		<img class="h-20 w-30" src="/pictures/ITS_Footer.png" alt="">
-	</footer>
 @endsection
