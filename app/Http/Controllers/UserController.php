@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\reservasi;
+use App\Models\Petunjuk;
 
 class UserController extends Controller
 {
@@ -21,7 +22,8 @@ class UserController extends Controller
     }
 
     public function panduan(){
-        return view ('panduan');
+        $petunjuk = Petunjuk::orderBy('id', 'desc')->first();
+        return view ('panduan',['petunjuk' => $petunjuk]);
     }
 
 

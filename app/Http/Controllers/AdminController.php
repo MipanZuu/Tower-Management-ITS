@@ -8,8 +8,10 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use PDF;
 
 use App\Models\User;
+use App\Models\Petunjuk;
 
 class AdminController extends Controller
 {
@@ -44,6 +46,30 @@ class AdminController extends Controller
         ]);
 
         return redirect()->route('list-reservasi')->with('Sukses!','Reservasi telah diubah');
+    }
+
+    public function uploadpetunjuk()
+    {
+        return view('upload-petunjuk');
+    }
+    public function uploadpdf(Request $request)
+    {
+        if ($request->hasFile('file')) {
+            $request->validate([
+                'file' => 'required|mimes:pdf|max:4096'
+            ]);
+            $request->file->store('petunjuk', 'public');
+            $petunjuk = new Petunjuk([
+                "file_path" => $request->file->hashName()
+            ]);
+            $petunjuk->save(); 
+           
+            
+            return redirect()->back()->withSuccess('File succesfully uploaded');
+        }
+        else {
+            return redirect()->back()->withErrors(['No file given']);
+        }
     }
 
     public function viewPage() {
