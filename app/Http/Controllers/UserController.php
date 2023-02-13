@@ -20,6 +20,10 @@ class UserController extends Controller
         return view ('reservasi',compact('reservasi'));
     }
 
+    public function panduan(){
+        return view ('panduan');
+    }
+
 
     public function postCreateStepOne(Request $request)
     {

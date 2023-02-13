@@ -30,7 +30,11 @@ Route::get('/reservasi/detailPeminjaman', [UserController::class, 'detailPeminja
 Route::post('/reservasi/detailPeminjamanpost', [UserController::class, 'postCreateStepThree'])->name('postCreateStepThree');
 Route::get('/reservasi/detailKegiatan', [UserController::class, 'detailKegiatan'])->name('detailKegiatan');
 Route::post('/reservasi/detailKegiatanpost', [UserController::class, 'postCreateStepFour'])->name('postCreateStepFour');
+<<<<<<< Updated upstream
 Route::get('/staffdisplay', [UserController::class, 'staffDisplay'])->name('staffDisplay');
+=======
+Route::get('/panduan', [UserController::class, 'panduan'])->name('panduanReservasi');
+>>>>>>> Stashed changes
 
 
 /*Login*/

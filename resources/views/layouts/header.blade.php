@@ -30,7 +30,7 @@
 </head>
 <body class="bg-white-800 font-sans leading-normal tracking-normal">
 
-	<nav class="flex items-center justify-between flex-wrap bg-blue-900 p-2 fixed w-full z-10 top-0 sticky">
+	<nav class="flex items-center justify-between flex-wrap bg-blue-900 p-2  w-full z-15 top-0 sticky">
 		<div class="flex items-center flex-shrink-0 text-white mr-6">
 		<div>
 			<img class="h-20 w-20" src="/pictures/itslogo.png" alt="Logo ITS">
@@ -60,13 +60,13 @@
 					<a class="inline-block text-white no-underline hover:text-gray-200 hover:text-underline py-2 px-4" href="#">Jadwal</a>
 				</li>
 				<li class="mr-3">
-					<a class="inline-block text-white no-underline hover:text-gray-200 hover:text-underline py-2 px-4" href="#">Panduan</a>
+					<a class="inline-block text-white no-underline hover:text-gray-200 hover:text-underline py-2 px-4{{ Request::is('panduan') ? 'active': '';}}" href="{{route('panduanReservasi')}}">Panduan</a>
 				</li>
 				<li class="mr-3">
 					<a class="inline-block text-white no-underline hover:text-gray-200 hover:text-underline py-2 px-4 {{ Request::is('staffdisplay') ? 'active': '';}}" href="{{ route('staffDisplay') }}">Staff</a>
 				</li>
 				<li class="mr-3">
-				<button type="button" class="inline-block text-white no-underline hover:text-gray-200 hover:text-underline py-2 px-4 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">MyITS SSO</button>
+				<button type="button" class="inline-block text-white no-underline hover:text-gray-200 hover:text-underline py-2 px-4  bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">MyITS SSO</button>
 				</li>
 			</ul>
 		</div>
