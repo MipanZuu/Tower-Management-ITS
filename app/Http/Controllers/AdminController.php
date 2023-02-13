@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\reservasi;
+use App\Models\Event;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -41,6 +42,7 @@ class AdminController extends Controller
         reservasi::where('reservationid', $request->reservationid)->update([
             'status' => $request['status'],
         ]);
+
         return redirect()->route('list-reservasi')->with('Sukses!','Reservasi telah diubah');
     }
 

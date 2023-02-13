@@ -11,11 +11,10 @@
     <div class="container w-full flex flex-wrap mx-auto px-2 pt-8 lg:pt-4 mt-8 pb-10">
         <!--Section container-->
         <section class="w-full">
+        <form method="post" action="{{  route('terimaReservasi')  }}">
+        @csrf
             <!--Card-->
-            <div id='section' class="p-8 mt-6 lg:mt-0 rounded shadow-lg bg-white">
-            
-               
-                
+            <div id='section' class="p-8 mt-6 lg:mt-0 rounded shadow-lg bg-white">    
                     <div class="md:flex mb-6">
                         <div class="md:w-1/3">
                             <label class="block text-gray-600 font-bold md:text-left mb-3 md:mb-0 pr-4" for="my-textfield">
@@ -192,8 +191,6 @@
                     </div>
 
                     @if($reservasis->status == '1')
-                    <form method="post" action="{{  route('terimaReservasi')  }}">
-                        @csrf
                         <input type="hidden" id="reservationid" name="reservationid" value="{{$reservasis->reservationid}}">
                     <div class="md:flex mb-6">
                         <div class="md:w-1/3">
