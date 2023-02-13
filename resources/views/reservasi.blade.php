@@ -14,7 +14,7 @@
     </style>
 
  <!-- <h1>Reservasi Ruangan</h1> -->
-  <div class="container w-full flex flex-wrap mx-auto px-2 pt-8 lg:pt-4 mt-8 pb-10">
+  <div class="container w-full flex flex-wrap mx-auto px-2 lg:pt-4 pb-10">
         <!--Section container-->
         <section class="w-full">
             <!--Card-->
