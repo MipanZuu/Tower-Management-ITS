@@ -12,6 +12,7 @@ use PDF;
 
 use App\Models\User;
 use App\Models\Petunjuk;
+use Illuminate\Console\View\Components\Alert;
 
 class AdminController extends Controller
 {
@@ -40,10 +41,24 @@ class AdminController extends Controller
     {    
         $request->validate([
             'status' => 'required',
+            'roomname' => 'required',
+            'eventname' => 'required',
+            'floornum' => 'required',
+            'reservationstart' => 'required',
+            'reservationend' => 'required',
         ]);
         reservasi::where('reservationid', $request->reservationid)->update([
             'status' => $request['status'],
         ]);
+        if ($request['status']==2) {
+            Event::create([
+                'title'		=> $request['eventname'],
+                'lantai'	=> $request['floornum'],
+                'ruangan'	=> $request['roomname'],
+                'start'     => $request['reservationstart'],
+                'end'     => $request['reservationend'],
+            ]);
+        }
 
         return redirect()->route('list-reservasi')->with('Sukses!','Reservasi telah diubah');
     }

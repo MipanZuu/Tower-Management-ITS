@@ -109,6 +109,7 @@
                                 Lantai Ruangan yang dipinjam  :
                             </label>
                         </div>
+                        <input type="hidden" id="floornum" name="floornum" value="{{$reservasis->floornum}}">
                         <div class="md:w-2/3">
                             <p class="py-2 text-sm text-gray-600">{{ $reservasis->floornum }}</p>
                         </div>
@@ -120,6 +121,7 @@
                                 Nama Ruangan yang dipinjam  :
                             </label>
                         </div>
+                        <input type="hidden" id="roomname" name="roomname" value="{{$reservasis->roomname}}">
                         <div class="md:w-2/3">
                             <p class="py-2 text-sm text-gray-600">{{ $reservasis->roomname }}</p>
                         </div>
@@ -132,7 +134,7 @@
                             </label>
                         </div>
                         <div class="md:w-2/3">
-                            <p class="py-2 text-sm text-gray-600">{{ $reservasis->reservationdate }}</p>
+                            <p class="py-2 text-sm text-gray-600">{{ $reservasis->created_at }}</p>
                         </div>
                     </div>
                     <div class="md:flex mb-6">
@@ -141,6 +143,8 @@
                                Jam Reservasi:
                             </label>
                         </div>
+                        <input type="hidden" id="reservationstart" name="reservationstart" value="{{$reservasis->reservationstart}}">
+                        <input type="hidden" id="reservationend" name="reservationend" value="{{$reservasis->reservationend}}">
                         <div class="md:w-2/3">
                             <p class="py-2 text-sm text-gray-600">{{ $reservasis->reservationstart }} - {{ $reservasis->reservationend }}</p>
                         </div>
@@ -163,6 +167,7 @@
                                Nama Kegiatan :
                             </label>
                         </div>
+                        <input type="hidden" id="eventname" name="eventname" value="{{$reservasis->eventname}}">
                         <div class="md:w-2/3">
                             <p class="py-2 text-sm text-gray-600">{{ $reservasis->eventname }} </p>
                         </div>
@@ -189,7 +194,6 @@
                             <p class="py-2 text-sm text-gray-600">{{ $reservasis->eventdescription}} </p>
                         </div>
                     </div>
-
                     @if($reservasis->status == '1')
                         <input type="hidden" id="reservationid" name="reservationid" value="{{$reservasis->reservationid}}">
                     <div class="md:flex mb-6">
@@ -210,7 +214,7 @@
                         </div>
                     </div>
                 </form>
-                    @endif
+                @endif
             </div>
 </div>
 

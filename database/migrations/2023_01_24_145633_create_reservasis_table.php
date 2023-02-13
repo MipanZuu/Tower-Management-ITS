@@ -25,9 +25,8 @@ return new class extends Migration
             $table->string('secondpicname');
             $table->string('floornum');
             $table->string('roomname');
-            $table->date('reservationdate');
-            $table->time('reservationstart');
-            $table->time('reservationend');
+            $table->dateTime('reservationstart');
+            $table->dateTime('reservationend');
             $table->string('organization');
             $table->string('eventname');
             $table->string('eventcategory');

@@ -133,7 +133,7 @@
                             </label>
                         </div>
                         <div class="md:w-2/3">
-                            <input class="form-input block w-full focus:bg-white border border-gray-300" id="reservationdate" name="reservationdate" type="date" >
+                            <input class="form-input block w-full focus:bg-white border border-gray-300" id="reservationstart" name="reservationstart" type="datetime-local" >
                             <p class="py-2 text-sm text-gray-600">Pilih tanggal acara Anda (Format: DD-MM-YYYY).</p>
                         </div>
                     </div>
@@ -141,24 +141,12 @@
                     <div class="md:flex mb-6">
                         <div class="md:w-1/3">
                             <label class="block text-gray-600 font-bold md:text-left mb-3 md:mb-0 pr-4" for="my-textfield">
-                            Waktu Mulai Peminjaman
+                            Tanggal dan Waktu Selesai Peminjaman
                             </label>
                         </div>
                         <div class="md:w-2/3">
-                            <input class="form-input block w-full focus:bg-white border border-gray-300" id="reservationstart" name="reservationstart" type="time" >
-                            <p class="py-2 text-sm text-gray-600">Masukkan waktu mulai peminjaman.</p>
-                        </div>
-                    </div>
-
-                    <div class="md:flex mb-6">
-                        <div class="md:w-1/3">
-                            <label class="block text-gray-600 font-bold md:text-left mb-3 md:mb-0 pr-4" for="my-textfield">
-                            Waktu Selesai Peminjaman
-                            </label>
-                        </div>
-                        <div class="md:w-2/3">
-                            <input class="form-input block w-full focus:bg-white border border-gray-300" id="reservationend" name="reservationend" type="time">
-                            <p class="py-2 text-sm text-gray-600">Masukkan waktu selesai peminjaman.</p>
+                            <input class="form-input block w-full focus:bg-white border border-gray-300" id="reservationend" name="reservationend" type="datetime-local">
+                            <p class="py-2 text-sm text-gray-600">Masukkan tanggal dan waktu selesai peminjaman.</p>
                         </div>
                     </div>
 
