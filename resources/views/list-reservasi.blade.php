@@ -54,7 +54,7 @@
                 {{$reservasi->roomname}}
                 </th>
                 <td class="px-6 py-4">
-                {{$reservasi->reservationdate}}
+                {{$reservasi->reservationstart}} - {{$reservasi->reservationend}}
                 </td>
                 <td class="px-6 py-4">
                 {{$reservasi->fullname}}
