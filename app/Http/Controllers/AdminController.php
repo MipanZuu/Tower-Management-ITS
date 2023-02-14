@@ -12,6 +12,7 @@ use PDF;
 
 use Carbon\Carbon;
 use App\Models\User;
+use App\Models\Ruangan;
 use App\Models\Petunjuk;
 use Illuminate\Console\View\Components\Alert;
 
@@ -92,7 +93,13 @@ class AdminController extends Controller
     }
 
     public function viewPage() {
-        return view ('view');
+        $now = Carbon::now();
+        $rooms = Ruangan::where([
+            ['id', '!=', NULL]
+        ])->orderBy('roomname', 'asc')->get();
+        
+
+        return view ('view',['now'=>$now,'ruangans'=>$rooms]);
     }
 
     public function index()

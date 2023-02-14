@@ -49,62 +49,23 @@
         </div>
 
     <div class="flex flex-wrap m-4">
+     @foreach($ruangans as $key => $ruangan)
       <div class="xl:w-1/3 md:w-1/2 p-4">
         <div class="border-2 border-gray-200 px-6 py-12  rounded-lg bg-white">
               <div class="flex justify-center mb-1">
-              <p class="leading-relaxed font-extrabold">Ruangan 1</p>
+              <p class="leading-relaxed font-extrabold">{{$ruangan->roomname }}</p>
               </div>
           <img class="h-25 rounded w-full object-cover object-center mb-2" src="https://dummyimage.com/720x400" alt="content">
               <div class="flex justify-center">
               <span class="mt-1.5 mr-1 w-3 h-3 bg-green-500 rounded-full"></span>
               <p class="title-font font-medium  text-gray-900">Sedang Kosong</p>
+            
             </div>
         
         </div>
       </div>
-      <div class="xl:w-1/3 md:w-1/2 p-4">
-        <div class="border-2 border-gray-200 px-6 py-12  rounded-lg bg-white">
-              <div class="flex justify-center mb-1">
-              <p class="leading-relaxed font-extrabold">Ruangan 2</p>
-              </div>
-          <img class="h-25 rounded w-full object-cover object-center mb-2" src="https://dummyimage.com/720x400" alt="content">
-              <div class="flex justify-center">
-              <span class="mt-1.5 mr-1 w-3 h-3 bg-red-500 rounded-full"></span>
-              <p class="title-font font-medium  text-gray-900">Sedang Dipakai</p>
-            </div>
-        
-        </div>
-      </div>
-      <div class="xl:w-1/3 md:w-1/2 p-4">
-        <div class="border-2 border-gray-200 px-6 py-12  rounded-lg bg-white">
-              <div class="flex justify-center mb-1">
-                <a href="#">
-              <p class="leading-relaxed font-extrabold">Ruangan 3</p>
-                </a>
-              </div>
-          <img class="h-25 rounded w-full object-cover object-center mb-2" src="https://dummyimage.com/720x400" alt="content">
-              <div class="flex justify-center">
-              <span class="mt-1.5 mr-1 w-3 h-3 bg-green-500 rounded-full"></span>
-              <p class="title-font font-medium  text-gray-900">Sedang Kosong</p>
-            </div>
-        
-        </div>
-      </div>
-      <div class="xl:w-1/3 md:w-1/2 p-4">
-        <div class="bg-gray-200 p-6 rounded-lg">
-          <img class="h-40 rounded w-full object-cover object-center mb-6" src="https://dummyimage.com/720x400" alt="content">
-        </div>
-      </div>
-      <div class="xl:w-1/3 md:w-1/2 p-4">
-        <div class="bg-gray-200 p-6 rounded-lg">
-          <img class="h-40 rounded w-full object-cover object-center mb-6" src="https://dummyimage.com/720x400" alt="content">
-        </div>
-      </div>
-      <div class="xl:w-1/3 md:w-1/2 p-4">
-        <div class="bg-gray-200 p-6 rounded-lg">
-          <img class="h-40 rounded w-full object-cover object-center mb-6" src="https://dummyimage.com/720x400" alt="content">
-        </div>
-      </div>
+      @endforeach
+      
     </div>
   
 </section>
