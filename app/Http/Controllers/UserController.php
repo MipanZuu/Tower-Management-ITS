@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Reservasi;
 use App\Models\Petunjuk;
+use App\Models\Event;
 
 class UserController extends Controller
 {
@@ -24,6 +25,41 @@ class UserController extends Controller
     public function panduan(){
         $petunjuk = Petunjuk::orderBy('id', 'desc')->first();
         return view ('panduan',['petunjuk' => $petunjuk]);
+    }
+
+    public function jadwal(){
+        $events = array();
+        $schedule = Event::all();
+        foreach($schedule as $schedules){
+            $events[] =[
+                'title' => $schedules->title,
+                'lantai' => $schedules->lantai,
+                'ruangan' => $schedules->ruangan,
+                'start' => $schedules->start,
+                'end' => $schedules->end,
+                
+            ];
+        }
+        // if($request->ajax())
+    	// {
+    	// 	$data = Event::whereDate('start', '>=', $request->start)
+        //                ->whereDate('end',   '<=', $request->end)
+        //                ->get(['id', 'title', 'lantai', 'ruangan', 'start', 'end']);
+        //     return response()->json($data);
+    	// }
+        return view ('jadwal',['event' => $events]);
+    }
+    public function kelasSatu(Request $request) 
+	{
+    	if($request->ajax())
+    	{
+    		$data = Event::whereDate('start', '>=', $request->start)
+                       ->whereDate('end',   '<=', $request->end)
+					   ->where('kelas', 'LIKE', $request->kelas)
+                       ->get(['id', 'title', 'lantai', 'ruangan', 'start', 'end']);
+            return response()->json($data);
+    	}
+    	return view('jadwal');
     }
 
 

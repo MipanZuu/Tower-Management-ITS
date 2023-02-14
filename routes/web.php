@@ -32,6 +32,7 @@ Route::get('/reservasi/detailKegiatan', [UserController::class, 'detailKegiatan'
 Route::post('/reservasi/detailKegiatanpost', [UserController::class, 'postCreateStepFour'])->name('postCreateStepFour');
 Route::get('/staffdisplay', [UserController::class, 'staffDisplay'])->name('staffDisplay');
 Route::get('/panduan', [UserController::class, 'panduan'])->name('panduanReservasi');
+Route::get('/jadwal', [UserController::class, 'jadwal'])->name('jadwal');
 
 
 /*Login*/

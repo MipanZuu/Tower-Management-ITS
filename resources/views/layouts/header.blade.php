@@ -30,7 +30,7 @@
 </head>
 <body class="bg-white-800 font-sans leading-normal tracking-normal">
 
-	<nav class="flex items-center justify-between flex-wrap bg-blue-900 p-2 w-full z-15 top-0 sticky">
+	<nav class="flex items-center justify-between flex-wrap bg-blue-900 p-2 w-full z-15 top-0 ">
 		<div class="flex items-center flex-shrink-0 text-white mr-6">
 		<div>
 			<img class="h-20 w-20" src="/pictures/itslogo.png" alt="Logo ITS">
@@ -57,7 +57,7 @@
 					<a class="inline-block text-white no-underline hover:text-gray-200 hover:text-underline py-2 px-4 {{ Request::is('reservasi','reservasi/InformasiPJ','reservasi/detailPeminjaman','reservasi/detailKegiatan') ? 'active': '';}}" href="{{route('reservasi')}}">Reservasi</a>
 				</li>
 				<li class="mr-3">
-					<a class="inline-block text-white no-underline hover:text-gray-200 hover:text-underline py-2 px-4" href="">Jadwal</a>
+					<a class="inline-block text-white no-underline hover:text-gray-200 hover:text-underline py-2 px-4 {{ Request::is('jadwal') ? 'active': '';}}" href="{{ route('jadwal') }}">Jadwal</a>
 				</li>
 				<li class="mr-3">
 					<a class="inline-block text-white no-underline hover:text-gray-200 hover:text-underline py-2 px-4 {{ Request::is('panduan') ? 'active': '';}}" href="{{route('panduanReservasi')}}">Panduan</a>
