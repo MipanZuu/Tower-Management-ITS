@@ -85,6 +85,12 @@
             @endforeach
         </tbody>
     </table>
+    <div class="row">
+        <div class="col-md-12">
+            {{ $reservasis->links('pagination::tailwind') }}
+        </div>
+    </div>
 </div>
+
 
 @endsection('content')
