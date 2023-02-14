@@ -73,7 +73,7 @@
                             </label>
                         </div>
                         <div class="md:w-2/3">
-                            <input class="form-input block w-full focus:bg-white border border-gray-300" id="fullname" name="fullname"
+                            <input class="form-input block w-full focus:bg-white border border-gray-300 px-2 py-1" id="fullname" name="fullname"
                              type="text" >
                             <p class="py-2 text-sm text-gray-600">Masukkan nama lengkap Anda (max. 100 karakter).</p>
                             @if($errors->has('fullname'))
@@ -89,7 +89,7 @@
                             </label>
                         </div>
                         <div class="md:w-2/3">
-                            <input class="form-input block w-full focus:bg-white border border-gray-300" id="reserverid" name="reserverid" type="text">
+                            <input class="form-input block w-full focus:bg-white border border-gray-300 px-2 py-1" id="reserverid" name="reserverid" type="text">
                             <p class="py-2 text-sm text-gray-600">Masukkan NRP atau NIP Anda.</p>
                             @if($errors->has('reserverid'))
                                 <div class="error py-2 text-sm text-red-600">{{ $errors->first('reserverid') }}</div>
@@ -104,7 +104,7 @@
                             </label>
                         </div>
                         <div class="md:w-2/3">
-                            <input class="form-input block w-full focus:bg-white border border-gray-300" id="contactnumber" name="contactnumber" type="text">
+                            <input class="form-input block w-full focus:bg-white border border-gray-300 px-2 py-1" id="contactnumber" name="contactnumber" type="text">
                             <p class="py-2 text-sm text-gray-600">Masukkan nomor telepon Anda yang dapat dihubungi.</p>
                             @if($errors->has('contactnumber'))
                                 <div class="error py-2 text-sm text-red-600">{{ $errors->first('contactnumber') }}</div>
@@ -119,7 +119,7 @@
                             </label>
                         </div>
                         <div class="md:w-2/3">
-                            <input class="form-input block w-full focus:bg-white border border-gray-300" id="email" name="email" type="text" >
+                            <input class="form-input block w-full focus:bg-white border border-gray-300 px-2 py-1" id="email" name="email" type="text" >
                             <p class="py-2 text-sm text-gray-600">Masukkan email Anda.</p>
                             @if($errors->has('email'))
                                 <div class="error py-2 text-sm text-red-600">{{ $errors->first('email') }}</div>

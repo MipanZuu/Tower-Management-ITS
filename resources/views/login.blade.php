@@ -57,6 +57,9 @@
                       Don't have an account yet? <a href="{{route('viewSignUp')}}" class="font-medium text-primary-600 hover:underline dark:text-primary-500">Sign up</a>
                   </p> -->
               </form>
+              @foreach($errors->all() as $error)
+                <div class="error py-2 text-sm text-red-600">{{ $errors }}</div>
+              @endforeach 
           </div>
       </div>
   </div>

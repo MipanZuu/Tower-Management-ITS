@@ -72,7 +72,7 @@
                             </label>
                         </div>
                         <div class="md:w-2/3">
-                            <input class="form-input block w-full focus:bg-white border border-gray-300" id="mainpicposition" name="mainpicposition" type="text" value="">
+                            <input class="form-input block w-full focus:bg-white border border-gray-300 px-2 py-1" id="mainpicposition" name="mainpicposition" type="text" value="">
                             <p class="py-2 text-sm text-gray-600">Masukkan jabatan Penanggung Jawab Utama.</p>
                             @if($errors->has('mainpicposition'))
                                 <div class="error py-2 text-sm text-red-600">{{ $errors->first('mainpicposition') }}</div>
@@ -87,7 +87,7 @@
                             </label>
                         </div>
                         <div class="md:w-2/3">
-                            <input class="form-input block w-full focus:bg-white border border-gray-300" id="mainpicname" name="mainpicname" type="text" value="">
+                            <input class="form-input block w-full focus:bg-white border border-gray-300 px-2 py-1" id="mainpicname" name="mainpicname" type="text" value="">
                             <p class="py-2 text-sm text-gray-600">Masukkan nama lengkap Penanggung Jawab Utama.</p>
                             @if($errors->has('mainpicname'))
                                 <div class="error py-2 text-sm text-red-600">{{ $errors->first('mainpicname') }}</div>
@@ -102,7 +102,7 @@
                             </label>
                         </div>
                         <div class="md:w-2/3">
-                            <input class="form-input block w-full focus:bg-white border border-gray-300" id="secondpicposition" name="secondpicposition" type="text" value="">
+                            <input class="form-input block w-full focus:bg-white border border-gray-300 px-2 py-1" id="secondpicposition" name="secondpicposition" type="text" value="">
                             <p class="py-2 text-sm text-gray-600">Masukkan jabatan Penanggung Jawab Sekunder.</p>
                             @if($errors->has('secondpicposition'))
                                 <div class="error py-2 text-sm text-red-600">{{ $errors->first('secondpicposition') }}</div>
@@ -117,7 +117,7 @@
                             </label>
                         </div>
                         <div class="md:w-2/3">
-                            <input class="form-input block w-full focus:bg-white border border-gray-300" id="secondpicname" name="secondpicname"  type="text" value="">
+                            <input class="form-input block w-full focus:bg-white border border-gray-300 px-2 py-1" id="secondpicname" name="secondpicname"  type="text" value="">
                             <p class="py-2 text-sm text-gray-600">Masukkan nama lengkap Penanggung Jawab Sekunder.</p>
                             @if($errors->has('secondpicname'))
                                 <div class="error py-2 text-sm text-red-600">{{ $errors->first('secondpicname') }}</div>

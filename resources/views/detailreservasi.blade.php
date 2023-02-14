@@ -8,7 +8,10 @@
 		</div>
 	</div>
     </nav>
-    <div class="container w-full flex flex-wrap mx-auto px-2 pt-8 lg:pt-4 mt-8 pb-10">
+    <div>
+        <a href="../list-reservasi" class="text-red-500 hover:text-red-300 font-bold mt-8 mx-4"><- Back</a>
+    </div>
+    <div class="container w-full flex flex-wrap mx-auto px-2 pt-8 lg:pt-4 pb-10">
         <!--Section container-->
         <section class="w-full">
         <form method="post" action="{{  route('terimaReservasi')  }}">
@@ -203,12 +206,12 @@
                             </label>
                         </div>
                         <div class="md:w-2/3">
-                        <select class="form-input block w-full focus:bg-white border border-gray-300" id="status" name="status">
+                        <select class="form-input block w-full focus:bg-white border border-gray-300 py-2 px-2" id="status" name="status">
                                 <option value="1">Pending</option>
                                 <option value="2">Diterima</option>
                                 <option value="3">Ditolak</option>
                             </select>
-                            <button type="submit" class="shadow bg-green-900 hover:bg-green-700 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" >
+                            <button type="submit" class="shadow bg-green-900 hover:bg-green-700 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 mt-8 rounded" >
                                 Simpan
                             </button>
                         </div>

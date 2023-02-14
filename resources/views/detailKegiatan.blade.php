@@ -72,7 +72,7 @@
                             </label>
                         </div>
                         <div class="md:w-2/3">
-                            <select class="form-input block w-full focus:bg-white border border-gray-300" id="organization" name="organization">
+                            <select class="form-input block w-full focus:bg-white border border-gray-300 px-2 py-1" id="organization" name="organization">
                                 <option value="">Default</option>
                                 <option value="BEM">BEM</option>
                                 <option value="Himpunan">Himpunan</option>
@@ -93,7 +93,7 @@
                             </label>
                         </div>
                         <div class="md:w-2/3">
-                            <input class="form-input block w-full focus:bg-white border border-gray-300" id="eventname" name="eventname" type="text" >
+                            <input class="form-input block w-full focus:bg-white border border-gray-300 px-2 py-1" id="eventname" name="eventname" type="text" >
                             @if($errors->has('eventname'))
                                 <div class="error py-2 text-sm text-red-600">{{ $errors->first('eventname') }}</div>
                             @endif
@@ -108,7 +108,7 @@
                             </label>
                         </div>
                         <div class="md:w-2/3">
-                            <select class="form-input block w-full focus:bg-white border border-gray-300" id="eventcategory" name="eventcategory">
+                            <select class="form-input block w-full focus:bg-white border border-gray-300 px-2 py-1" id="eventcategory" name="eventcategory">
                                 <option value="">Default</option>
                                 <option value="A">A</option>
                                 <option value="B">B</option>
@@ -128,7 +128,7 @@
                             </label>
                         </div>
                         <div class="md:w-2/3">
-                            <input class="form-input block w-full focus:bg-white border border-gray-300" id="eventdescription" name="eventdescription" type="text">
+                            <input class="form-input block w-full focus:bg-white border border-gray-300 px-2 py-1" id="eventdescription" name="eventdescription" type="text">
                             @if($errors->has('eventdescription'))
                                 <div class="error py-2 text-sm text-red-600">{{ $errors->first('eventdescription') }}</div>
                             @endif
