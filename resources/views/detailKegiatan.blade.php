@@ -79,7 +79,9 @@
                                 <option value="Pribadi">Pribadi</option>
                                 <option value="Lainnya">Lainnya</option>
                             </select>
-
+                            @if($errors->has('organization'))
+                                <div class="error py-2 text-sm text-red-600">{{ $errors->first('organization') }}</div>
+                            @endif
                             <p class="py-2 text-sm text-gray-600">Pilih Organisasi yang Anda wakilkan.</p>
                         </div>
                     </div>
@@ -92,6 +94,9 @@
                         </div>
                         <div class="md:w-2/3">
                             <input class="form-input block w-full focus:bg-white border border-gray-300" id="eventname" name="eventname" type="text" >
+                            @if($errors->has('eventname'))
+                                <div class="error py-2 text-sm text-red-600">{{ $errors->first('eventname') }}</div>
+                            @endif
                             <p class="py-2 text-sm text-gray-600">Masukkan nama kegiatan Anda.</p>
                         </div>
                     </div>
@@ -109,7 +114,9 @@
                                 <option value="B">B</option>
                                 <option value="C">C</option>
                             </select>
-
+                            @if($errors->has('eventcategory'))
+                                <div class="error py-2 text-sm text-red-600">{{ $errors->first('eventcategory') }}</div>
+                            @endif
                             <p class="py-2 text-sm text-gray-600">Pilih kategori kegiatan Anda.</p>
                         </div>
                     </div>
@@ -122,6 +129,9 @@
                         </div>
                         <div class="md:w-2/3">
                             <input class="form-input block w-full focus:bg-white border border-gray-300" id="eventdescription" name="eventdescription" type="text">
+                            @if($errors->has('eventdescription'))
+                                <div class="error py-2 text-sm text-red-600">{{ $errors->first('eventdescription') }}</div>
+                            @endif
                             <p class="py-2 text-sm text-gray-600">Deskripsikan kegiatan Anda.</p>
                         </div>
                     </div>
