@@ -86,7 +86,9 @@
                                 <option value="10">10</option>
                                 <option value="11">11</option>
                             </select>
-
+                            @if($errors->has('floornum'))
+                                <div class="error py-2 text-sm text-red-600">{{ $errors->first('floornum') }}</div>
+                            @endif
                             <p class="py-2 text-sm text-gray-600">Pilih Lantai dari ruangan yang akan Anda gunakan.</p>
                         </div>
                     </div>
@@ -121,7 +123,9 @@
                                 <option value="Kelas 20">Kelas 20</option>
                                 <option value="Ruang Serbaguna">Ruang Serbaguna</option>
                             </select>
-
+                            @if($errors->has('roomname'))
+                                <div class="error py-2 text-sm text-red-600">{{ $errors->first('roomname') }}</div>
+                            @endif
                             <p class="py-2 text-sm text-gray-600">Pilih Ruangan yang akan Anda gunakan.</p>
                         </div>
                     </div>
@@ -134,6 +138,9 @@
                         </div>
                         <div class="md:w-2/3">
                             <input class="form-input block w-full focus:bg-white border border-gray-300" id="reservationstart" name="reservationstart" type="datetime-local" >
+                            @if($errors->has('reservationstart'))
+                                <div class="error py-2 text-sm text-red-600">{{ $errors->first('reservationstart') }}</div>
+                            @endif
                             <p class="py-2 text-sm text-gray-600">Pilih tanggal acara Anda (Format: DD-MM-YYYY).</p>
                         </div>
                     </div>
@@ -146,6 +153,9 @@
                         </div>
                         <div class="md:w-2/3">
                             <input class="form-input block w-full focus:bg-white border border-gray-300" id="reservationend" name="reservationend" type="datetime-local">
+                            @if($errors->has('reservationend'))
+                                <div class="error py-2 text-sm text-red-600">{{ $errors->first('reservationend') }}</div>
+                            @endif
                             <p class="py-2 text-sm text-gray-600">Masukkan tanggal dan waktu selesai peminjaman.</p>
                         </div>
                     </div>

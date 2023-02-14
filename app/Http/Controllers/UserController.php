@@ -67,6 +67,12 @@ class UserController extends Controller
             'mainpicname' => 'required',
             'secondpicposition' => 'required',
             'secondpicname' => 'required',
+        ],
+        [
+            'mainpicposition.required' => 'Posisi PIC tidak boleh kosong!',
+            'mainpicname.required' => 'Nama PIC tidak boleh kosong!',
+            'secondpicposition.required' => 'Posisi tidak boleh kosong!',
+            'secondpicname.required' => 'Nama PIC tidak boleh kosong!',
         ]);
   
         $reservasi = $request->session()->get('reservasi');
@@ -88,6 +94,12 @@ class UserController extends Controller
             'roomname' => 'required',
             'reservationstart' => 'required',
             'reservationend' => 'required',
+        ],
+        [
+            'floornum.required' => 'Lantai tidak boleh kosong!',
+            'roomname.required' => 'Nama ruangan tidak boleh kosong!',
+            'reservationstart.required' => 'Tanggal dan jam mulai tidak boleh kosong!',
+            'reservationend.required' => 'Tanggal dan jam selesai tidak boleh kosong!',
         ]);
   
         $reservasi = $request->session()->get('reservasi');
@@ -109,6 +121,12 @@ class UserController extends Controller
             'eventname' => 'required',
             'eventcategory' => 'required',
             'eventdescription'=> 'required',
+        ],
+        [
+            'organization.required' => 'Nama organisasi tidak boleh kosong!',
+            'eventname.required' => 'Nama event tidak boleh kosong!',
+            'eventcategory.required' => 'Katagori kegiatan tidak boleh kosong!',
+            'eventdescription.required' => 'Deskripsi Kegiatan tidak boleh kosong!',
         ]);
   
         $reservasi = $request->session()->get('reservasi');
