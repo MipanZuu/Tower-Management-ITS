@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\reservasi;
+use App\Models\Reservasi;
 use App\Models\Petunjuk;
 
 class UserController extends Controller
@@ -34,10 +34,16 @@ class UserController extends Controller
             'reserverid' => 'required',
             'contactnumber' => 'required|max:12',
             'email' => 'required|email',
+        ],
+        [
+            'fullname.required' => 'Nama tidak boleh kosong!',
+            'reserverid.required' => 'NRP tidak boleh kosong!',
+            'contactnumber.required' => 'Nomor telepon tidak boleh kosong!',
+            'email.required' => 'Email tidak boleh kosong!',
         ]);
   
         if(empty($request->session()->get('reservasi'))){
-            $reservasi = new reservasi();
+            $reservasi = new Reservasi();
             $reservasi->fill($validatedData);
             $request->session()->put('reservasi', $reservasi);
         }else{

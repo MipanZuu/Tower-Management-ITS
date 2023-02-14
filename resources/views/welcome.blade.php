@@ -10,7 +10,7 @@
 				
 				<div class="flex justify-center">
 					<a class="" href="{{route('reservasi')}}">
-				  <button class="inline-flex text-white bg-yellow-500 border-0 py-2 px-6 focus:outline-none hover:bg-yellow-600 rounded text-lg">Reservasi Sekarang >></button>
+				  <button class="inline-flex text-white bg-yellow-400 border-0 py-4 px-6 mx-4 my-4 focus:outline-none hover:bg-yellow-500 rounded text-lg">Reservasi Sekarang >></button>
 				</a>
 				</div>
 			  </div>
@@ -22,9 +22,9 @@
 			<div class="container-fluid bg-blue-900 p-10 text-center text-white">
 				<h1 class="text-3xl p-3">Panduan Reservasi Ruangan Tower ITS</h1>
 				<p class="text-lg p-5">Untuk mendapatkan panduan mengenai tata cara reservasi ruangan pada Tower ITS, <br> silahkan klik tombol di bawah.</p>
-				<a href="{{route('panduanReservasi')}}" type="button" class="focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:focus:ring-yellow-900">Panduan Reservasi</a>
+				<a href="{{route('panduanReservasi')}}" type="button" class="focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-3 mr-2 mb-2 dark:focus:ring-yellow-900">Panduan Reservasi</a>
 			</div>
-			<div class="container-fluid bg-white-900 p-10 text-center">
+			<div class="container-fluid bg-white-900 p-10 text-center my-6">
 				<h1 class="text-4xl font-bold pb-5">Tata Tertib Reservasi</h1>
 				<div class="text-left px-16">
 				<ol type="1" class="list-decimal">
