@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use PDF;
 
+use Carbon\Carbon;
 use App\Models\User;
 use App\Models\Petunjuk;
 use Illuminate\Console\View\Components\Alert;
@@ -34,7 +35,10 @@ class AdminController extends Controller
 
     public function DetailReservasi($id) {
         $data = reservasi::where('reservationid','=',$id)->first();
-        return view('DetailReservasi', ['reservasis'=>$data]);
+        $date = Carbon::parse($data->reservationstart)->format('l, j F Y');
+        $timestart = Carbon::parse($data->reservationstart)->format('H:i');
+        $timeend = Carbon::parse($data->reservationend)->format('H:i');
+        return view('DetailReservasi', ['reservasis'=>$data,'date'=>$date,'timestart'=>$timestart,'timeend'=>$timeend]);
     }
 
     public function terima(Request $request)
@@ -96,6 +100,7 @@ class AdminController extends Controller
         if(Auth::check()){
             $user = Auth::user();
             if ($user->role == 'Admin'){
+                
                 return view('dashboardAdmin');
             }
         }
