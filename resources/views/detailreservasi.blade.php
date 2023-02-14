@@ -8,10 +8,12 @@
 		</div>
 	</div>
     </nav>
-    <div>
-        <a href="../list-reservasi" class="text-red-500 hover:text-red-300 font-bold mt-8 mx-4"><- Back</a>
-    </div>
-    <div class="container w-full flex flex-wrap mx-auto px-2 pt-8 lg:pt-4 pb-10">
+    
+
+    {{-- card --}}
+
+
+    <div class="container w-full flex flex-wrap mx-auto px-2 pt-8 lg:pt-4 mt-8 pb-10">
         <!--Section container-->
         <section class="w-full">
         <form method="post" action="{{  route('terimaReservasi')  }}">
@@ -197,8 +199,10 @@
                             <p class="py-2 text-sm text-gray-600">{{ $reservasis->eventdescription}} </p>
                         </div>
                     </div>
-                    @if($reservasis->status == '1')
-                        <input type="hidden" id="reservationid" name="reservationid" value="{{$reservasis->reservationid}}">
+
+                @if($reservasis->status == '1')
+                    <form method="post" action="{{  route('terimaReservasi', $reservasis->reservationid)  }}">
+                    {{ csrf_field() }}
                     <div class="md:flex mb-6">
                         <div class="md:w-1/3">
                             <label class="block text-gray-600 font-bold md:text-left mb-3 md:mb-0 pr-4" for="my-textfield">
@@ -219,6 +223,10 @@
                 </form>
                 @endif
             </div>
+
+    {{-- card --}}
+
+
 </div>
 
 @endsection('content')
