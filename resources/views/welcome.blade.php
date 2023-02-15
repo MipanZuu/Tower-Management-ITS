@@ -3,7 +3,7 @@
 			<div class=" mx-auto flex px-5 py-24 md:flex-row flex-col items-center h-screen">
 			  <div class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
 
-				<h1 class="sm:text-8xl md:text-7xl text-7xl mb-4 font-bold text-gray-900">Selamat Datang di
+				<h1 class="sm:text-5xl md:text-6xl text-4xl mb-4 font-bold text-gray-900">Selamat Datang di
 				  <br class="hidden lg:inline-block">Tower ITS
 				</h1>
 		
@@ -26,7 +26,7 @@
 			</div>
 			<div class="container-fluid bg-white-900 p-10 text-center my-6">
 				<h1 class="text-4xl font-bold pb-5">Tata Tertib Reservasi</h1>
-				<div class="text-left px-16">
+				<div class="text-left px-0 md:px-8 sm:px-0">
 				<ol type="1" class="list-decimal">
 					<li>Penggunaan ruangan harus mendapat persetujuan dari Rektor ITS.</li>
 					<li>Pengajuan peminjaman maksimal 2 minggu sebelum pelaksanaan kegiatan.</li>

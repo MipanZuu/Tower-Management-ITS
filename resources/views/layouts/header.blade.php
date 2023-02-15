@@ -48,8 +48,8 @@
 			</button>
 		</div>
 
-		<div class="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden lg:block pt-6 lg:pt-0" id="nav-content">
-			<ul class="list-reset lg:flex justify-end flex-1 items-center">
+		<div class="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden lg:block pt-6 justify-items-center lg:pt-0" id="nav-content">
+			<ul class="list-reset lg:flex lg:text-center justify-end flex-1 items-center">
 				<li class="mr-3">
 					<a class="inline-block text-white no-underline hover:text-gray-200 hover:text-underline py-2 px-4 {{ Request::is('welcome') ? 'active': '';}}" href="{{route('home')}}">Home</a>
 				</li>
