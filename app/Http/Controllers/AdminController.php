@@ -85,7 +85,7 @@ class AdminController extends Controller
             $petunjuk->save(); 
            
             
-            return redirect()->back()->withSuccess('File succesfully uploaded');
+            return redirect()->back()->with('message', 'File succesfully uploaded');
         }
         else {
             return redirect()->back()->withErrors(['No file given']);
