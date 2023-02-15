@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\reservasi;
+use App\Models\Reservasi;
 use App\Models\Event;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -26,16 +26,16 @@ class AdminController extends Controller
     }
 
     public function listReservasi(Request $request) {
-        $data = reservasi::where([
+        $data = Reservasi::where([
             ['reservationid', '!=', NULL]
         ])->where(function($query) use ($request){
             $query->where('fullname', 'LIKE', '%' . $request->term . '%');
-        })->orderBy('status', 'asc')->orderBy('reservationid', 'asc')->paginate(10);
+        })->orderBy('status', 'asc')->orderBy('reservationid', 'desc')->paginate(10);
         return view('list-reservasi', ['reservasis'=>$data]);
     }
 
     public function DetailReservasi($id) {
-        $data = reservasi::where('reservationid','=',$id)->first();
+        $data = Reservasi::where('reservationid','=',$id)->first();
         $date = Carbon::parse($data->reservationstart)->format('l, j F Y');
         $timestart = Carbon::parse($data->reservationstart)->format('H:i');
         $timeend = Carbon::parse($data->reservationend)->format('H:i');
@@ -52,7 +52,7 @@ class AdminController extends Controller
             'reservationstart' => 'required',
             'reservationend' => 'required',
         ]);
-        reservasi::where('reservationid', $request->reservationid)->update([
+        Reservasi::where('reservationid', $request->reservationid)->update([
             'status' => $request['status'],
         ]);
         if ($request['status']==2) {
@@ -93,13 +93,15 @@ class AdminController extends Controller
     }
 
     public function viewPage() {
-        $now = Carbon::now();
-        $rooms = Ruangan::where([
-            ['id', '!=', NULL]
-        ])->orderBy('roomname', 'asc')->get();
-        
+        $now = Carbon::now()->timezone('Asia/Jakarta')->format('Y-m-d H:i:s');
+        $ruangans = Ruangan::all();
+        $reservasis = Reservasi::query()
+        ->where('status', 2)
+        ->where('reservationstart', '<=', $now)
+        ->where('reservationend', '>=', $now)
+        ->get(['roomname', 'floornum']);
 
-        return view ('view',['now'=>$now,'ruangans'=>$rooms]);
+        return view('view', compact('ruangans', 'reservasis'));
     }
 
     public function index()
