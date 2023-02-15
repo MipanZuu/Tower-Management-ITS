@@ -14,20 +14,20 @@
         <div class="bg-white border-2 border-black rounded-2xl py-10 flex flex-col">
             <div class="flex justify-end pr-10">
             </div>
-            <h2 class="mb-6 text-4xl  flex justify-start pl-16">
+            <h2 class="mb-6 text-4xl  flex  justify-center md:justify-start  md:pl-16">
                 Upload File
             </h2>
             @if($errors->any())
             <h4>Error</h4>
             @endif
-            <div class="flex justify-start pl-16 items-center pb-10">
+            <div class="flex justify-center md:justify-start md:pl-16 items-center pb-10">
                 <form class="w-2/5" action="{{ route('uploadPDF') }}" method="POST" enctype="multipart/form-data">
                     @csrf
-                    <div class="w-96 h-8.5 h-8.5 border-2">
-                        <input placeholder="Upload File" class="bg-white text-base" type="file" name="file"
+                    <div class="w-5 h-8.5 h-8.5 border-2">
+                        <input placeholder="Upload File" class="bg-white text-base " type="file" name="file"
                             id="customFile">
                     </div>
-                    <div class="flex flex-row pt-10">
+                    <div class="flex flex-row  pt-10">
                         <div class="w-32 h-10 bg-blue-400 hover:bg-blue-200 rounded-lg flex justify-center items-center">
                             <button class="btn btn-primary text-sm ">Import Petunjuk</button>
                         </div>
