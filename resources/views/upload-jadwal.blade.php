@@ -4,7 +4,7 @@
 <nav class="flex items-center justify-center flex-wrap p-5 fixed w-full z-10 top-0 sticky sm:justify-between">
     <div class="flex items-center flex-shrink-0 text-white  mr-6">
     <div>
-        <span class="text-black font-bold no-underline hover:text-white hover:no-underline text-2xl pl-2"><i class="em em-grinning"></i>Unggah Petunjuk</span>
+        <span class="text-black font-bold no-underline hover:text-white hover:no-underline text-2xl pl-2"><i class="em em-grinning"></i>Unggah Jadwal</span>
     </div>
 </div>
 </nav>   
@@ -39,21 +39,10 @@
 			</svg>
 		</div>
 		<div class="modal__col">
-        @if($errors->any())
-			<div class="modal__content" >
-				<h2 class="modal__title">Oops!</h2>
-				<p class="modal__message">File and tidak bisa di upload, silahkan periksa kembali file anda (.pdf)</p>
-				<div class="modal__actions modal__actions--center">
-                    <a href="{{route('uploadPetunjuk')}}">
-					<button class="modal__button" type="button" >Kembali</button>
-                </a>
-				</div>
-			</div>
-        @endif
 			<div class="modal__content">
                 <form action="{{ route('uploadPDF') }}" method="POST" enctype="multipart/form-data">
                 @csrf
-				<h2 class="modal__title text-3xl">Unggah Petunjuk</h2>
+				<h2 class="modal__title text-3xl">Unggah Jadwal</h2>
 				<p class="modal__message text-xl">Pilih file dari komputer anda</p>
 				<div class="modal__actions pt-24">
 					<button class="modal__button modal__button--upload text-lg" type="button" data-action="file">Pilih File</button>
@@ -92,6 +81,25 @@
 					</div>
 				</div>
 			</div>
+            @if($errors->any())
+			<div class="modal__content" >
+				<h2 class="modal__title">Oops!</h2>
+				<p class="modal__message">Your file could not be uploaded due to an error. Try uploading it again?</p>
+				<div class="modal__actions modal__actions--center">
+					<button class="modal__button" type="button" data-action="upload">Retry</button>
+					<button class="modal__button" type="button" data-action="cancel">Cancel</button>
+				</div>
+			</div>
+            @else
+			<div class="modal__content" >
+				<h2 class="modal__title">Upload Successful!</h2>
+				<p class="modal__message">Your file has been uploaded. You can copy the link to your clipboard.</p>
+				<div class="modal__actions modal__actions--center">
+					<button class="modal__button" type="button" data-action="copy">Copy Link</button>
+					<button class="modal__button" data-action="cancel">Done</button>
+				</div>
+			</div>
+            @endif
 		</div>
 	</div>
 </div>
@@ -200,11 +208,6 @@ class UploadModal {
     }
     stateDisplay() {
         this.el?.setAttribute("data-state", `${this.state}`);
-    }
-    success() {
-        this.isUploading = false;
-        this.state = 3;
-        this.stateDisplay();
     }
     upload() {
         if (!this.isUploading) {

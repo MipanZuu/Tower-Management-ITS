@@ -85,11 +85,16 @@ class AdminController extends Controller
             $petunjuk->save(); 
            
             
-            return redirect()->back()->with('message', 'File succesfully uploaded');
+            return redirect()->back()->with('success', 'petunjuk berhasil diunggah');
         }
         else {
-            return redirect()->back()->withErrors(['No file given']);
+            return redirect()->back()->with(['No file given']);
         }
+    }
+
+    public function uploadJadwal()
+    {
+        return view('upload-jadwal');
     }
 
     public function viewPage() {

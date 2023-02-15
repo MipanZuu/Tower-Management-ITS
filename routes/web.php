@@ -53,5 +53,6 @@ Route::post('full-calendar/action', [CalendarController::class, 'action']);
 Route::get('/list-reservasi',[AdminController::class, 'listReservasi'])->name('list-reservasi');
 Route::get('/upload-petunjuk',[AdminController::class, 'uploadpetunjuk'])->name('uploadPetunjuk');
 Route::post('/upload-petunjuk/post',[AdminController::class, 'uploadpdf'])->name('uploadPDF');
+Route::get('/upload-jadwal',[AdminController::class, 'uploadJadwal'])->name('uploadJadwal');
 Route::get('/detailreservasi/{id}',[AdminController::class, 'DetailReservasi'])->name('detail-reservasi');
 Route::post('/terima',[AdminController::class, 'terima'])->name('terimaReservasi');

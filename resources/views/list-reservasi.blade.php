@@ -12,7 +12,9 @@
     <div class="">
     <div class="flex justify-between mx-2 sm:mx-6 py-2 mt-6">
         <div class="flex-wrap">
+        <a href="{{route('uploadJadwal')}}">
         <button class="inline-flex text-white bg-yellow-500 border-0 py-2 px-7 focus:outline-none hover:bg-yellow-600 rounded text-lg">Upload Jadwal</button>
+        </a>
         <a href="{{route('uploadPetunjuk')}}">
         <button class="inline-flex text-white bg-green-500 border-0 py-2 px-7 mt-2 sm:mt-0 ml-0 sm:ml-2 focus:outline-none hover:bg-green-600 rounded text-lg">Upload petunjuk</button>
         </a>
