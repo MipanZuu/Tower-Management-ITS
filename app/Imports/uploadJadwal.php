@@ -15,13 +15,15 @@ class uploadJadwal implements ToModel
     public function model(array $row)
     {
         $unixDate = ($row[3] - 25569) * 86400;
-        $date =  gmdate("yyyy-mm-dd hh:mm:ss", $unixDate);
+        $date =  gmdate("Y-m-d H:i:s", $unixDate);
+        $unixDate2 = ($row[4] - 25569) * 86400;
+        $date2 =  gmdate("Y-m-d H:i:s", $unixDate2);
         return new Event([
             'title'         => $row[0],
             'lantai'        => $row[1],
             'ruangan'       => $row[2],
             'start'         => $date,
-            'end'           => $row[4],
+            'end'           => $date2,
         ]);
     }
 }
