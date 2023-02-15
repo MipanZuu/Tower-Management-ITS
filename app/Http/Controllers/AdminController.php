@@ -11,6 +11,9 @@ use Illuminate\Support\Facades\Hash;
 use PDF;
 
 use Carbon\Carbon;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Imports\uploadJadwal;
+use App\Exports\uploadJadwalExport;
 use App\Models\User;
 use App\Models\Ruangan;
 use App\Models\Petunjuk;
@@ -95,6 +98,27 @@ class AdminController extends Controller
     public function uploadJadwal()
     {
         return view('upload-jadwal');
+    }
+
+    public function fileImportExport()
+    {
+       return view('file-import');
+    }
+   
+    /**
+    * @return \Illuminate\Support\Collection
+    */
+    public function fileImport(Request $request) 
+    {
+        Excel::import(new uploadJadwal, $request->file('file')->store('temp'));
+        return back();
+    }
+    /**
+    * @return \Illuminate\Support\Collection
+    */
+    public function fileExport() 
+    {
+        return Excel::download(new uploadJadwalExport, 'report-list-reservasi.xlsx');
     }
 
     public function viewPage() {

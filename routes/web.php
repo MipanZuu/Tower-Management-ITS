@@ -56,3 +56,8 @@ Route::post('/upload-petunjuk/post',[AdminController::class, 'uploadpdf'])->name
 Route::get('/upload-jadwal',[AdminController::class, 'uploadJadwal'])->name('uploadJadwal');
 Route::get('/detailreservasi/{id}',[AdminController::class, 'DetailReservasi'])->name('detail-reservasi');
 Route::post('/terima',[AdminController::class, 'terima'])->name('terimaReservasi');
+
+/*Export Import*/
+Route::get('file-import-export', [AdminController::class, 'fileImportExport']);
+Route::post('file-import', [AdminController::class, 'fileImport'])->name('file-import');
+Route::get('file-export', [AdminController::class, 'fileExport'])->name('file-export');
