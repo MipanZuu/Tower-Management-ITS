@@ -41,8 +41,8 @@
             <img class="h-25 rounded w-full object-cover object-center mb-2" src="https://dummyimage.com/720x400" alt="content">
             <div class="flex justify-center">
               @php($isEmpty = 1)
-              @foreach($reservasis as $reservasi)
-                @if($reservasi->roomname == $ruangan->roomname && $reservasi->floornum == $ruangan->floornum)
+              @foreach($events as $event)
+                @if($event->ruangan == $ruangan->roomname && $event->lantai == $ruangan->floornum)
                   <span class="mt-1.5 mr-1 w-3 h-3 bg-red-500 rounded-full"></span>
                   <p class="title-font font-medium text-gray-900">Sedang Dipakai</p>
                   @php ($isEmpty = 0)

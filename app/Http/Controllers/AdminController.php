@@ -124,13 +124,12 @@ class AdminController extends Controller
     public function viewPage() {
         $now = Carbon::now()->timezone('Asia/Jakarta')->format('Y-m-d H:i:s');
         $ruangans = Ruangan::all();
-        $reservasis = Reservasi::query()
-        ->where('status', 2)
-        ->where('reservationstart', '<=', $now)
-        ->where('reservationend', '>=', $now)
-        ->get(['roomname', 'floornum']);
+        $events = Event::query()
+        ->where('start', '<=', $now)
+        ->where('end', '>=', $now)
+        ->get(['ruangan', 'lantai']);
 
-        return view('view', compact('ruangans', 'reservasis'));
+        return view('view', compact('ruangans', 'events'));
     }
 
     public function index()
