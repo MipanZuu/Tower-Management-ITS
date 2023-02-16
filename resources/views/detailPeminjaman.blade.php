@@ -62,6 +62,9 @@
                 <div class="pb-10">
                     <h1 class="font-bold text-3xl mb-4">Detail Peminjaman</h1>
                     <p class="text-gray-500">Ruangan yang akan dipinjam memiliki kapasitas dan fasilitas yang berbeda-beda. Teknisi yang bertanggung jawab terhadap ruangan dapat dilihat di halaman staff. Untuk melihat ketersediaan ruangan dapat dilihat di halaman ruangan</p>
+                    @if ($errors->has('msg'))
+                    <div class="error py-4 text-md text-bold text-red-600">{{$errors->first('msg')}}</div>
+                    @endif
                 </div>
                 <form action="{{route('postCreateStepThree')}}" method="POST">
                     @csrf

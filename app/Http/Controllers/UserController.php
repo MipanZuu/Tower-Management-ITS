@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\Reservasi;
 use App\Models\Petunjuk;
 use App\Models\Event;
+use Carbon\Carbon;
+use Illuminate\Support\Facades\Redirect;
 
 class UserController extends Controller
 {
@@ -137,7 +139,30 @@ class UserController extends Controller
             'reservationstart.required' => 'Tanggal dan jam mulai tidak boleh kosong!',
             'reservationend.required' => 'Tanggal dan jam selesai tidak boleh kosong!',
         ]);
-  
+
+        $resValidator = Event::query()
+        ->where('lantai', $request->floornum)
+        ->where('ruangan', $request->roomname)
+        ->get();
+
+        $start = Carbon::parse($request->reservationstart)->format('Y-m-d H:i:s');
+        $end = Carbon::parse($request->reservationend)->format('Y-m-d H:i:s');
+
+        foreach ($resValidator as $validator) {
+            if($validator->start <= $start && $start <= $validator->end){
+                return Redirect::back()->withErrors(['msg' => 'Ruang kelas sudah direservasi untuk waktu tersebut!']);
+            }
+
+            if($validator->start <= $end && $end <= $validator->end){
+                return Redirect::back()->withErrors(['msg' => 'Ruang kelas sudah direservasi untuk waktu tersebut!']);
+            }
+
+            if($start <= $validator->start && $validator->end <= $end){
+                return Redirect::back()->withErrors(['msg' => 'Ruang kelas sudah direservasi untuk waktu tersebut!']);
+            }
+        }
+
+
         $reservasi = $request->session()->get('reservasi');
         $reservasi->fill($validatedData);
         $request->session()->put('reservasi', $reservasi);
