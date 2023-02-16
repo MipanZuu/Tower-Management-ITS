@@ -135,10 +135,22 @@ class AdminController extends Controller
     public function index()
     {
         if(Auth::check()){
+            $now = Carbon::now()->timezone('Asia/Jakarta')->format('Y-m-d H:i:s');
+            $ruanganss = Ruangan::all();
+            $eventss = Event::query()
+            ->where('start', '<=', $now)
+            ->where('end', '>=', $now)
+            ->get(['ruangan', 'lantai']);
             $user = Auth::user();
+            $events = Event::count();
+            $ruangans = Ruangan::count();
+            $reservasis = Reservasi::count();
+            $reservasisTerima = Reservasi::where('status','=',2)->count();
+            $reservasisPending = Reservasi::where('status','=',1)->count();
+            $reservasisTolak = Reservasi::where('status','=',3)->count();
             if ($user->role == 'Admin'){
                 
-                return view('dashboardAdmin');
+                return view('dashboardAdmin',  compact('events','reservasis', 'ruangans', 'reservasisTerima', 'reservasisTolak', 'reservasisPending', 'ruanganss', 'eventss'));
             }
         }
         return redirect('login');
