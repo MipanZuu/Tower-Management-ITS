@@ -143,7 +143,7 @@ class UserController extends Controller
         $resValidator = Event::query()
         ->where('lantai', $request->floornum)
         ->where('ruangan', $request->roomname)
-        ->get();
+        ->get(['start', 'end']);
 
         $start = Carbon::parse($request->reservationstart)->format('Y-m-d H:i:s');
         $end = Carbon::parse($request->reservationend)->format('Y-m-d H:i:s');
@@ -161,7 +161,6 @@ class UserController extends Controller
                 return Redirect::back()->withErrors(['msg' => 'Ruang kelas sudah direservasi untuk waktu tersebut!']);
             }
         }
-
 
         $reservasi = $request->session()->get('reservasi');
         $reservasi->fill($validatedData);
@@ -199,8 +198,19 @@ class UserController extends Controller
   
         $request->session()->forget('reservasi');
   
-        return redirect()->route('home');
+        return redirect()->route('confirmed');
     }
 
+    public function confirm(){
+        return view ('confirmed');
+    }
 
+    public function status(Request $request){
+        $data = Reservasi::where([
+            ['reservationid', '!=', NULL]
+        ])->where(function($query) use ($request){
+            $query->where('fullname', 'LIKE', '%' . $request->term . '%');
+        })->orderBy('reservationid', 'desc')->paginate(10);
+        return view('status', ['reservasis'=>$data]);
+    }
 }

@@ -30,6 +30,8 @@ Route::get('/reservasi/detailPeminjaman', [UserController::class, 'detailPeminja
 Route::post('/reservasi/detailPeminjamanpost', [UserController::class, 'postCreateStepThree'])->name('postCreateStepThree');
 Route::get('/reservasi/detailKegiatan', [UserController::class, 'detailKegiatan'])->name('detailKegiatan');
 Route::post('/reservasi/detailKegiatanpost', [UserController::class, 'postCreateStepFour'])->name('postCreateStepFour');
+Route::get('/confirmed', [UserController::class, 'confirm'])->name('confirmed');
+Route::get('/status', [UserController::class, 'status'])->name('status');
 Route::get('/staffdisplay', [UserController::class, 'staffDisplay'])->name('staffDisplay');
 Route::get('/panduan', [UserController::class, 'panduan'])->name('panduanReservasi');
 Route::get('/jadwal', [UserController::class, 'jadwal'])->name('jadwal');
