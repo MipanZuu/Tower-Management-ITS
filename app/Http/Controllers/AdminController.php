@@ -45,8 +45,8 @@ class AdminController extends Controller
         return view('DetailReservasi', ['reservasis'=>$data,'date'=>$date,'timestart'=>$timestart,'timeend'=>$timeend]);
     }
 
-    public function terima(Request $request)
-    {    
+    public function terima(Request $request, $id)
+    {
         $request->validate([
             'status' => 'required',
             'roomname' => 'required',
@@ -55,7 +55,7 @@ class AdminController extends Controller
             'reservationstart' => 'required',
             'reservationend' => 'required',
         ]);
-        Reservasi::where('reservationid', $request->reservationid)->update([
+        Reservasi::where('reservationid', $id)->update([
             'status' => $request['status'],
         ]);
         if ($request['status']==2) {

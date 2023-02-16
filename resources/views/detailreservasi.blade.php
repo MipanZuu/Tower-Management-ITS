@@ -16,7 +16,7 @@
     <div class="container w-full flex flex-wrap mx-auto px-2 pt-8 lg:pt-4 mt-8 pb-10">
         <!--Section container-->
         <section class="w-full">
-        <form method="post" action="{{  route('terimaReservasi')  }}">
+        <form method="post" action="{{  route('terimaReservasi', $reservasis->reservationid)  }}">
         @csrf
             <!--Card-->
             <div id='section' class="p-8 mt-6 lg:mt-0 rounded shadow-lg bg-white">    
@@ -201,7 +201,7 @@
                     </div>
 
                 @if($reservasis->status == '1')
-                    <form method="post" action="{{  route('terimaReservasi', $reservasis->reservationid)  }}">
+                <form method="post" action="{{  route('terimaReservasi', $reservasis->reservationid)  }}">
                     {{ csrf_field() }}
                     <div class="md:flex mb-6">
                         <div class="md:w-1/3">
@@ -223,7 +223,8 @@
                 </form>
                 @endif
             </div>
-
+        </form>
+        </section>
     {{-- card --}}
 
 
