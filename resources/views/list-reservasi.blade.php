@@ -10,42 +10,42 @@
 	</div>
     </nav>
     <div class="">
-    <div class="flex justify-between mx-2 sm:mx-6 py-2 mt-6">
+    <div class="flex justify-between mx-2 lg:mx-6 py-2 mt-6">
         <div class="flex-wrap">
         <a href="{{route('uploadJadwal')}}">
-        <button class="inline-flex text-white bg-yellow-500 border-0 py-2 px-7 focus:outline-none hover:bg-yellow-600 rounded text-lg">Upload Jadwal</button>
+        <button class="inline-flex text-white bg-yellow-500 border-0 py-2 px-7 focus:outline-none hover:bg-yellow-600 rounded text-m">Upload Jadwal</button>
         </a>
         <a href="{{route('uploadPetunjuk')}}">
-        <button class="inline-flex text-white bg-green-500 border-0 py-2 px-7 mt-2 sm:mt-0 ml-0 sm:ml-2 focus:outline-none hover:bg-green-600 rounded text-lg">Upload Petunjuk</button>
+        <button class="inline-flex text-white bg-green-500 border-0 py-2 px-7 mt-2 sm:mt-0 ml-0 sm:ml-2 focus:outline-none hover:bg-green-600 rounded text-m">Upload Petunjuk</button>
         </a>
         <a href="{{route('file-export')}}">
-        <button class="inline-flex text-white bg-green-500 border-0 py-2 px-7 mt-2 sm:mt-0 ml-0 sm:ml-2 focus:outline-none hover:bg-green-600 rounded text-lg">Download Jadwal</button>
+        <button class="inline-flex text-white bg-green-500 border-0 py-2 px-7 mt-2 sm:mt-0 ml-0 sm:ml-2 focus:outline-none hover:bg-green-600 rounded text-m">Download Jadwal</button>
         </a>
         </div>
       </div>
     </div>
     <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400 my-4">
-        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+        <thead class="text-xs text-gray-700 uppercase bg-gray-400 dark:bg-gray-700 dark:text-gray-400">
             <tr>
-                <th scope="col" class="px-6 py-3">
+                <th scope="col" class="px-6 py-3 hidden md:block">
                     Reservation ID
                 </th>
-                <th scope="col" class="px-6 py-3">
+                <th scope="col" class="pl-2 py-3 md:px-6">
                     Lantai
                 </th>
-                <th scope="col" class="px-6 py-3">
+                <th scope="col" class="pl-2 py-3 md:px-6">
                     Ruangan
                 </th>
-                <th scope="col" class="px-6 py-3">
+                <th scope="col" class="pl-2 py-3 md:px-6">
                     Tanggal/Jam Pemesanan
                 </th>
-                <th scope="col" class="px-6 py-3">
+                <th scope="col" class="pl-2 py-3 md:px-6">
                     Judul Kegiatan
                 </th>
-                <th scope="col" class="px-6 py-3">
+                <th scope="col" class="pl-2 py-3 md:px-6">
                     Pemesan
                 </th>
-                <th scope="col" class="px-6 py-3">
+                <th scope="col" class="pl-2 py-3 md:px-6">
                     Approve
                 </th>
                 <th scope="col" class="px-6 py-3">
@@ -57,25 +57,25 @@
         <tbody>
             @foreach ($reservasis as $key => $reservasi)
             <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white hidden md:block">
                     {{$reservasi->reservationid}}
                 </th>
-                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                <th scope="row" class="pl-2 py-3 md:px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                     {{$reservasi->floornum}}
                 </th>
-                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                <th scope="row" class="pl-2 py-3 md:px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                     {{$reservasi->roomname}}
                 </th>
-                <td class="px-6 py-4">
+                <td class="pl-2 py-3 md:px-6">
                     {{$reservasi->reservationstart}} - {{$reservasi->reservationend}}
                 </td>
-                <td class="px-6 py-4">
+                <td class="pl-2 py-3 md:px-6">
                     {{$reservasi->eventname}}
                 </td>
-                <td class="px-6 py-4">
+                <td class="pl-2 py-3 md:px-6">
                     {{$reservasi->fullname}}
                 </td>
-                <td class="px-6 py-4">
+                <td class="pl-2 py-3 md:px-6">
                     @if($reservasi->status == 1)
                     <div class="flex justify-start">
                         <span class="mt-1.5 mr-1 w-3 h-3 bg-yellow-400 rounded-full"></span>
