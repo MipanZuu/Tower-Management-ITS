@@ -33,7 +33,7 @@ class AdminController extends Controller
             ['reservationid', '!=', NULL]
         ])->where(function($query) use ($request){
             $query->where('fullname', 'LIKE', '%' . $request->term . '%');
-        })->orderBy('status', 'asc')->orderBy('reservationid', 'desc')->paginate(10);
+        })->orderBy('reservationid', 'desc')->paginate(10);
         return view('list-reservasi', ['reservasis'=>$data]);
     }
 

@@ -20,7 +20,7 @@
             <!--Card-->
             <div id='section' class="p-8 mt-6 lg:mt-0 rounded shadow-lg bg-white">
             <div class="mt-6 pb-10">
-            <ol class="items-cente justify-center w-full space-y-4 sm:flex sm:space-x-8 sm:space-y-0">
+            <ol class="items-center justify-center w-full space-y-4 sm:flex sm:space-x-8 sm:space-y-0">
                 <li class="flex items-center text-blue-600 dark:text-blue-500 space-x-2.5">
                     <span class="flex items-center justify-center w-8 h-8 border border-blue-600 rounded-full shrink-0 dark:border-blue-500">
                         1
@@ -60,7 +60,7 @@
             </ol>
             </div>
                 <div class="pb-10">
-                    <h1 class="font-bold text-2xl">Informasi Peminjaman</h1>
+                    <h1 class="font-bold text-3xl mb-4">Informasi Peminjaman</h1>
                     <p class="text-gray-500">Informasi peminjam dibutuhkan dalam memastikan keaslian peminjaman. Nomor Telepon dan Email dipergunakan untuk menghubungi peminjam saat ruangan tidak dapat dipinjam, atau ketika ruangan yang akan digunakan dialihkan untuk kegiatan lainnya.</p>
                 </div>
 

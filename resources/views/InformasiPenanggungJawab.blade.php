@@ -60,8 +60,8 @@
             </ol>
             </div>
                 <div class="pb-10">
-                <h1 class="font-bold text-2xl">Informasi Penanggung Jawab</h1>
-                <p class="text-gray-500">Informasi Penanggung Jawab Utama dan Sekunder dibutuhkan untuk disertakan secara otomatis dalam Surat Ijin Peminjaman.</p>
+                    <h1 class="font-bold text-3xl mb-4">Informasi Penanggung Jawab</h1>
+                    <p class="text-gray-500">Informasi Penanggung Jawab Utama dan Sekunder dibutuhkan untuk disertakan secara otomatis dalam Surat Ijin Peminjaman.</p>
                 </div>
                 <form action="{{ route('postCreateStepTwo') }}" method="POST">
                     @csrf

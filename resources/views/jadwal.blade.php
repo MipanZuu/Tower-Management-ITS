@@ -12,8 +12,8 @@
 </style>
 
 
-
-    <div class="py-5 ml-9">
+    <h1 class="font-bold text-3xl my-8 mx-4">Jadwal</h1> 
+    <div class="py-3 ml-4">
         <select class="form-control m-input" id="room" name="room">
         <option value="Kelas 1" >Kelas 1</option>
         <option value="Kelas 2">Kelas 2</option><br>

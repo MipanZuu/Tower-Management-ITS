@@ -60,8 +60,8 @@
             </ol>
             </div>
                 <div class="pb-10">
-                <h1 class="font-bold text-2xl">Detail Kegiatan</h1>
-                <p class="text-gray-500">Keterangan kegiatan diperlukan untuk memastikan keaslian peminjaman. Nama Acara beserta waktu peminjaman akan ditampilkan di ruangan yang dipinjam, apabila peminjaman disetujui.</p>
+                    <h1 class="font-bold text-3xl mb-4">Detail Kegiatan</h1>
+                    <p class="text-gray-500">Keterangan kegiatan diperlukan untuk memastikan keaslian peminjaman. Nama Acara beserta waktu peminjaman akan ditampilkan di ruangan yang dipinjam, apabila peminjaman disetujui.</p>
                 </div>
                 <form action="{{route('postCreateStepFour')}}" method="POST">
                     @csrf
