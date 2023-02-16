@@ -51,6 +51,9 @@ class AdminController extends Controller
     public function loginPage() {
         return view('admin.login');
     }
+    public function testingMap() {
+        return view('testingMapReserve');
+    }
 
     public function login(Request $request){
         $request->validate([
