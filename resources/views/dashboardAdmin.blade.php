@@ -13,7 +13,7 @@
           <div class="flex flex-wrap -m-4 text-center">
             <div class="p-4 md:w-1/4 sm:w-1/2 w-full">
               <div class="border-2 border-gray-200 px-6 py-12 rounded-lg bg-white">
-                <p class="leading-relaxed font-extrabold">Ruangan </p>
+                <p class="leading-relaxed font-extrabold">Total Ruangan </p>
                 <h2 class="title-font font-medium text-3xl text-gray-900">{{ $ruangans }}</h2>
                 
               </div>
