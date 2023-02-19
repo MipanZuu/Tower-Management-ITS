@@ -16,7 +16,7 @@ class CalendarController extends Controller
                        ->get(['id', 'title', 'lantai', 'ruangan', 'start', 'end']);
             return response()->json($data);
     	}
-    	return view('full-calendar');
+    	return view('admin.fullCalendar');
     }
 
 	public function lantaiSatu(Request $request) 
@@ -29,7 +29,7 @@ class CalendarController extends Controller
                        ->get(['id', 'title', 'lantai', 'ruangan', 'start', 'end']);
             return response()->json($data);
     	}
-    	return view('full-calendar');
+    	return view('admin.fullCalendar');
     }
 
     public function action(Request $request)

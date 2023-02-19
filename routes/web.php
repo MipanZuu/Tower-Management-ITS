@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CalendarController;
+use App\Http\Controllers\ReservasiController;
+use App\Http\Controllers\RuanganController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -19,23 +21,28 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-/*User*/
-Route::get('/signup', [AdminController::class, 'viewSignUp'])->name('viewSignUp');
-Route::get('/welcome', [UserController::class, 'home'])->name('home');
-Route::get('/reservasi', [UserController::class, 'reservasi'])->name('reservasi');
-Route::post('/reservasipost', [UserController::class, 'postCreateStepOne'])->name('postCreateStepOne');
-Route::get('/reservasi/InformasiPJ', [UserController::class, 'penanggungJawab'])->name('penanggungJawab');
-Route::post('/reservasi/InformasiPJpost', [UserController::class, 'postCreateStepTwo'])->name('postCreateStepTwo');
-Route::get('/reservasi/detailPeminjaman', [UserController::class, 'detailPeminjaman'])->name('detailPeminjaman');
-Route::post('/reservasi/detailPeminjamanpost', [UserController::class, 'postCreateStepThree'])->name('postCreateStepThree');
-Route::get('/reservasi/detailKegiatan', [UserController::class, 'detailKegiatan'])->name('detailKegiatan');
-Route::post('/reservasi/detailKegiatanpost', [UserController::class, 'postCreateStepFour'])->name('postCreateStepFour');
-Route::get('/confirmed', [UserController::class, 'confirm'])->name('confirmed');
-Route::get('/status', [UserController::class, 'status'])->name('status');
-Route::get('/staffdisplay', [UserController::class, 'staffDisplay'])->name('staffDisplay');
-Route::get('/panduan', [UserController::class, 'panduan'])->name('panduanReservasi');
-Route::get('/jadwal', [UserController::class, 'jadwal'])->name('jadwal');
 
+/*User*/
+Route::controller(UserController::class)->group(function () {
+    Route::get('/welcome', 'home')->name('home');
+    Route::get('/status', 'status')->name('status');
+    Route::get('/staffdisplay', 'staffDisplay')->name('staffDisplay');
+    Route::get('/panduan', 'panduan')->name('panduanReservasi');
+    Route::get('/jadwal', 'jadwal')->name('jadwal');
+});
+
+/*Make Reservation*/
+Route::controller(ReservasiController::class)->group(function () {
+    Route::get('/reservasi','stepOne')->name('reservasi');
+    Route::post('/reservasipost', 'createOne')->name('postCreateStepOne');
+    Route::get('/reservasi/InformasiPJ', 'stepTwo')->name('penanggungJawab');
+    Route::post('/reservasi/InformasiPJpost', 'createTwo')->name('postCreateStepTwo');
+    Route::get('/reservasi/detailPeminjaman', 'stepThree')->name('detailPeminjaman');
+    Route::post('/reservasi/detailPeminjamanpost', 'createThree')->name('postCreateStepThree');
+    Route::get('/reservasi/detailKegiatan', 'stepFour')->name('detailKegiatan');
+    Route::post('/reservasi/detailKegiatanpost', 'createFour')->name('postCreateStepFour');
+    Route::get('/confirmed', 'confirm')->name('confirmed');
+});
 
 /*Login*/
 Route::get('/login',[AdminController::class, 'loginpage'])->name('login');
@@ -44,20 +51,23 @@ Route::get('/admin',[AdminController::class, 'index'])->name('dashboardAdmin');
 Route::post('/logout',[AdminController::class, 'logout'])->name('logout.post');
 
 /*Dashboard*/
-Route::get('/view', [AdminController::class, 'viewPage'])->name('viewClass');
+Route::get('/signup', [AdminController::class, 'viewSignUp'])->name('viewSignUp');
+Route::get('/ruangan', [RuanganController::class, 'index'])->name('viewClass');
 
 /*Calendar*/
 Route::get('full-calendar', [CalendarController::class, 'index'])->name('full-calendar');
 Route::get('full-calendar/Lantai1', [CalendarController::class, 'lantaiSatu'])->name('lantaiSatu');
 Route::post('full-calendar/action', [CalendarController::class, 'action']);
 
-/*reservasi*/
-Route::get('/list-reservasi',[AdminController::class, 'listReservasi'])->name('list-reservasi');
+/*List Reservasi*/
+Route::get('/list-reservasi',[ReservasiController::class, 'listReservasi'])->name('listReservasi');
+Route::get('/detailreservasi/{id}',[ReservasiController::class, 'detailReservasi'])->name('detail-reservasi');
+Route::post('/detailreservasi/{id}/terima',[ReservasiController::class, 'terima'])->name('terimaReservasi');
+
+/*Upload*/
 Route::get('/upload-petunjuk',[AdminController::class, 'uploadpetunjuk'])->name('uploadPetunjuk');
 Route::post('/upload-petunjuk/post',[AdminController::class, 'uploadpdf'])->name('uploadPDF');
 Route::get('/upload-jadwal',[AdminController::class, 'uploadJadwal'])->name('uploadJadwal');
-Route::get('/detailreservasi/{id}',[AdminController::class, 'DetailReservasi'])->name('detail-reservasi');
-Route::post('/detailreservasi/{id}/terima',[AdminController::class, 'terima'])->name('terimaReservasi');
 
 /*Export Import*/
 Route::get('file-import-export', [AdminController::class, 'fileImportExport']);
