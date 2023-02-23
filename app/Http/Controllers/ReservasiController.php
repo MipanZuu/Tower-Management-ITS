@@ -7,6 +7,7 @@ use App\Models\Event;
 use App\Models\Reservasi;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Redirect;
+use App\Models\Ruangan;
 
 class ReservasiController extends Controller
 {
@@ -72,8 +73,20 @@ class ReservasiController extends Controller
 
     public function stepThree(Request $request){
         $reservasi = $request->session()->get('reservasi');
-        return view ('user.reservasi3',compact('reservasi'));
+
+        $lantais = Ruangan::select('floornum')->distinct('floornum')->where('id','!=',NULL)->get();
+        
+        return view ('user.reservasi3',compact('reservasi','lantais'));
     }
+
+
+    public function detailPeminjamanAjax(Request $request){
+        $floornum = $request->floornum;
+
+        $ruangans = Ruangan::where('floornum',$floornum)->get();
+        return response()->json(['ruangans'=>$ruangans]);
+    }
+
 
     public function createThree(Request $request)
     {

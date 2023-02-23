@@ -77,11 +77,9 @@
                         <div class="md:w-2/3">
                             <select  class="form-input block w-full focus:bg-white border border-gray-300 px-2 py-1" id="floornum" name="floornum">
                                 <option value="">Default</option>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
+                                @foreach ($lantais as $lantai)
+                                <option value="{{ $lantai->floornum }}">Lantai {{ $lantai->floornum}}</option>
+                                @endforeach
                             </select>
                             @if($errors->has('floornum'))
                                 <div class="error py-2 text-sm text-red-600">{{ $errors->first('floornum') }}</div>
@@ -97,12 +95,7 @@
                         </div>
                         <div class="md:w-2/3">
                             <select  class="form-input block w-full focus:bg-white border border-gray-300 px-2 py-1" id="roomname" name="roomname">
-                                <option value="">Default</option>
-                                <option value="Kelas 1">Kelas 1</option>
-                                <option value="Kelas 2">Kelas 2</option>
-                                <option value="Kelas 3">Kelas 3</option>
-                                <option value="Kelas 4">Kelas 4</option>
-                                <option value="Kelas 5">Kelas 5</option>
+                             
                             </select>
                             @if($errors->has('roomname'))
                                 <div class="error py-2 text-sm text-red-600">{{ $errors->first('roomname') }}</div>
@@ -158,4 +151,62 @@
 
       </div>
       <!--/container-->
+
+      <script type="text/javascript">
+        $.ajaxSetup({
+        headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+        });
+        $(document).ready(function () {
+        $('#floornum').on('change',function(e) {
+        var floorID = e.target.value;
+        $.ajax({
+        url:"{{ route('detailPeminjamanAjax') }}",
+        type:"POST",
+        data: {
+        floornum: floorID
+        },
+        dataType: 'json',
+        success:function (result) {
+        $('#roomname').empty();
+        $('#roomname').append('   <option>Default</option>'); 
+        $.each(result.ruangans, function(key,value){
+        $('#roomname').append('<option value="'+value.roomname+'">'+value.roomname+'</option>');
+        })
+        }
+        })
+        });
+        });
+        </script>
+
+      {{-- <script>
+        $(document).ready(function() {
+        $('#floornum').on('change', function() {
+           var lantaiPos = $(this).val();
+           if(lantaiPos) {
+               $.ajax({
+                   url: '/reservasi/detailPeminjaman/'+lantaiPos,
+                   type: "GET",
+                   data : {"_token":"{{ csrf_token() }}"},
+                   dataType: "json",
+                   success:function(data)
+                   {
+                     if(data){
+                        $('#roomname').empty();
+                        $('#roomname').append('   <option>Default</option>'); 
+                        $.each(data, function(key,ruangans){
+                            $('select[name="ruangans"]').append('<option value="'+ ruangans.roomname +'">' + ruangans.roomname+ '</option>');
+                        });
+                    }else{
+                        $('#course').empty();
+                    }
+                 }
+               });
+           }else{
+             $('#roomname').empty();
+           }
+        });
+        });
+    </script> --}}
 @endsection

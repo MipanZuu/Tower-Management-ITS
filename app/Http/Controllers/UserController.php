@@ -8,6 +8,7 @@ use App\Models\Petunjuk;
 use App\Models\Event;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Redirect;
+use App\Models\Ruangan;
 
 class UserController extends Controller
 {

@@ -38,6 +38,7 @@ Route::controller(ReservasiController::class)->group(function () {
     Route::get('/reservasi/InformasiPJ', 'stepTwo')->name('penanggungJawab');
     Route::post('/reservasi/InformasiPJpost', 'createTwo')->name('postCreateStepTwo');
     Route::get('/reservasi/detailPeminjaman', 'stepThree')->name('detailPeminjaman');
+    Route::post('/fetch-Ruangan','detailPeminjamanAjax')->name('detailPeminjamanAjax');
     Route::post('/reservasi/detailPeminjamanpost', 'createThree')->name('postCreateStepThree');
     Route::get('/reservasi/detailKegiatan', 'stepFour')->name('detailKegiatan');
     Route::post('/reservasi/detailKegiatanpost', 'createFour')->name('postCreateStepFour');
