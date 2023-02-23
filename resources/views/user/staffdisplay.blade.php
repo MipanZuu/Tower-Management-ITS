@@ -1,7 +1,7 @@
 @extends('layouts.header')
 @section('content')
-<div class="overflow-x-auto shadow-md sm:rounded-lg h-screen lg:pt-4">
-    <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+<div class="container m-auto rounded-lg shadow-lg overflow-x-auto shadow-lg h-screen my-4">
+    <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400 rounded-lg">
         <caption class="p-5 text-lg font-semibold text-left text-gray-900 bg-white dark:text-white dark:bg-gray-800">
             <h1 class="font-bold text-3xl mb-4">Staff</h1> 
             <p class="mt-1 text-sm font-normal text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus ex repellat ipsum, voluptatibus voluptate vel ab natus quis fugiat consequatur, enim assumenda eveniet sunt reprehenderit odit non dolore eum est.</p>

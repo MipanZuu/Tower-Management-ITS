@@ -1,7 +1,7 @@
 @extends('layouts.header')
 @section('content')   
 
-<div class="overflow-x-auto h-screen bg-blue-50 shadow-md sm:rounded-lg">
+<div class="container mx-auto overflow-x-auto h-screen bg-white my-4 shadow-lg sm:rounded-lg">
     <nav class="flex items-center justify-center flex-wrap p-5  w-full z-0 top-0  sm:justify-between">
 		<div class="flex items-center flex-shrink-0 text-white  mr-6">
 		<div>
@@ -11,7 +11,7 @@
     </nav>
 
     <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400 my-4">
-        <thead class="text-xs text-gray-700 uppercase bg-gray-400 dark:bg-gray-700 dark:text-gray-400">
+        <thead class="text-xs text-gray-700 uppercase bg-yellow-400 dark:bg-gray-700 dark:text-gray-400">
             <tr>
                 <th scope="col" class="px-6 py-3 hidden md:block">
                     No.

@@ -12,6 +12,7 @@
 </style>
 
 
+<div class="container bg-white mx-auto py-2 my-4 rounded-lg shadow-xl">
     <h1 class="font-bold text-3xl my-8 mx-4">Jadwal</h1> 
     <div class="py-3 ml-4">
         <select class="form-control m-input" id="room" name="room">
@@ -23,10 +24,10 @@
     
 
 
-    <div class=" bg-white px-6 py-5">
+    <div class=" bg-white px-6 py-5 rounded-md">
         <div id="calendar" class=""></div>
     </div>
-    
+</div>
 
    
 <script>

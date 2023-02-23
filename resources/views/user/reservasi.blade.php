@@ -14,11 +14,11 @@
     </style>
 
  <!-- <h1>Reservasi Ruangan</h1> -->
-  <div class="container w-full flex flex-wrap mx-auto px-2 lg:pt-4 pb-10">
+  <div class="container w-full flex flex-wrap mx-auto lg:pt-4 pb-10">
         <!--Section container-->
         <section class="w-full">
             <!--Card-->
-            <div id='section' class="p-8 mt-6 lg:mt-0 rounded shadow-lg bg-white">
+            <div id='section' class="p-8 mt-6 lg:mt-0 rounded-lg shadow-lg bg-white">
             <div class="mt-6 pb-10">
             <ol class="items-center justify-center w-full space-y-4 sm:flex sm:space-x-8 sm:space-y-0">
                 <li class="flex items-center text-blue-600 dark:text-blue-500 space-x-2.5">

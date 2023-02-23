@@ -77,7 +77,7 @@
 	</nav>
 
     <!--Container-->
-	<div class="container mx-auto bg-white md:mt-18">
+	<div class="mx-auto bgColourDefault">
         @yield ('content')
     </div>
 	<footer class="flex items-center justify-between flex-wrap bg-blue-900 z-10 top-0 sticky lg:px-40 sm:px-0">

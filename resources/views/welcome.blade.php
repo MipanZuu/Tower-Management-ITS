@@ -1,6 +1,6 @@
 @extends('layouts.header')
 @section('content')
-			<div class=" mx-auto flex px-5 py-24 md:flex-row flex-col items-center h-screen">
+			<div class="bg-white mx-auto flex px-5 py-24 md:flex-row flex-col items-center h-screen">
 			  <div class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
 
 				<h1 class="sm:text-5xl md:text-6xl text-4xl mb-4 font-bold text-gray-900">Selamat Datang di
@@ -24,7 +24,7 @@
 				<p class="text-lg p-5">Untuk mendapatkan panduan mengenai tata cara reservasi ruangan pada Tower ITS, <br> silahkan klik tombol di bawah.</p>
 				<a href="{{route('panduanReservasi')}}" type="button" class="focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-3 mr-2 mb-2 dark:focus:ring-yellow-900">Panduan Reservasi</a>
 			</div>
-			<div class="container-fluid bg-white-900 p-10 text-center my-6">
+			<div class="container-fluid bg-white p-10 text-center my-6">
 				<h1 class="text-4xl font-bold pb-5">Tata Tertib Reservasi</h1>
 				<div class="text-left px-0 md:px-8 sm:px-0">
 				<ol type="1" class="list-decimal">
