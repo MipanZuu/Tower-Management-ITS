@@ -52,7 +52,7 @@ Route::get('/admin',[AdminController::class, 'index'])->name('dashboardAdmin');
 Route::post('/logout',[AdminController::class, 'logout'])->name('logout.post');
 
 /*Dashboard*/
-Route::get('/view', [AdminController::class, 'viewPage'])->name('viewClass');
+Route::get('/view', [AdminController::class, 'testingMap'])->name('testingMap');
 
 /*Calendar*/
 Route::get('full-calendar', [CalendarController::class, 'index'])->name('full-calendar');
