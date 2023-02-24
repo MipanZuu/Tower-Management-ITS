@@ -16,6 +16,12 @@ class Ruangan extends Model
     protected $fillable = [
         'roomname',    
         'floornum',
+        'capacity',
+        'building',
+        'department',
+        'faculty',
+
+
     ];
 
 }

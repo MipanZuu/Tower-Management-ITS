@@ -21,8 +21,6 @@ return new class extends Migration
             $table->string('email');
             $table->string('mainpicposition');
             $table->string('mainpicname');
-            $table->string('secondpicposition');
-            $table->string('secondpicname');
             $table->integer('floornum');
             $table->string('roomname');
             $table->dateTime('reservationstart');
