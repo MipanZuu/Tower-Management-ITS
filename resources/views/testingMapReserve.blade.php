@@ -47,7 +47,7 @@
             <div class="relative h-64 md:h-auto" style="cursor: move; user-select: none; touch-action: none;">
                 <div class="absolute top-0 w-full h-full z-10">
                 <svg class="scale-10 md:scale-10" viewBox="0 0 1920 1100" preserveAspectRatio="none">
-                    <polygon class="polygon roomAvailable" points="537.4213562373095,559.4213562373095 254.57864376269052,559.4213562373095 254.57864376269046,276.5786437626905 537.4213562373095,276.5786437626905" stroke="#000" stroke-width="1"/>
+                    <polygon id="test" class="polygon roomAvailable" points="600.4213562373095,559.4213562373095 300.57864376269052,559.4213562373095 300.57864376269046,276.5786437626905 600.4213562373095,276.5786437626905" stroke="#000" stroke-width="1"/>
                     
                 </svg> 
                 </div>
@@ -57,4 +57,9 @@
     </div>
 
 </section>
+<script>
+    document.getElementById('test').onclick = function(){
+        document.getElementById("test").classList.toggle("hidden");
+    }
+</script>
 @endsection
