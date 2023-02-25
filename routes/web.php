@@ -45,6 +45,11 @@ Route::controller(ReservasiController::class)->group(function () {
     Route::get('/confirmed', 'confirm')->name('confirmed');
 });
 
+/* admin */
+Route::controller(RuanganController::class)->group(function () {
+    Route::get('/viewClass','index')->name('viewClass');
+});
+
 /*Login*/
 Route::get('/login',[AdminController::class, 'loginpage'])->name('login');
 Route::post('/loginuser',[AdminController::class, 'login'])->name('login.post');

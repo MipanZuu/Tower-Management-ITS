@@ -45,9 +45,6 @@ class AdminController extends Controller
         return redirect('admin.login');
     }
 
-    // public function viewSignUp() {
-    //     return view ('signup');
-    // }
     public function loginPage() {
         return view('admin.login');
     }
@@ -81,6 +78,12 @@ class AdminController extends Controller
     {
         return view('admin.uploadPetunjuk');
     }
+
+    public function viewClass()
+    {
+        return view('admin.ruanganIndex');
+    }
+
     public function uploadpdf(Request $request)
     {
         if ($request->hasFile('file')) {
