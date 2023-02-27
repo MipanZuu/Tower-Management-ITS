@@ -51,25 +51,32 @@ class ReservasiController extends Controller
 
     public function createTwo(Request $request)
     {
-        $validatedData = $request->validate([
+         $request->validate([
             'mainpicposition' => 'required',
             'mainpicname' => 'required',
-            'secondpicposition' => 'required',
-            'secondpicname' => 'required',
+            'suratpath' => 'required|mimes:pdf|max:4096',
         ],
         [
             'mainpicposition.required' => 'Posisi PIC tidak boleh kosong!',
             'mainpicname.required' => 'Nama PIC tidak boleh kosong!',
-            'secondpicposition.required' => 'Posisi tidak boleh kosong!',
-            'secondpicname.required' => 'Nama PIC tidak boleh kosong!',
+            'suratpath.required' => 'Surat tidak boleh kosong!'
         ]);
-  
+
         $reservasi = $request->session()->get('reservasi');
-        $reservasi->fill($validatedData);
+        $request->suratpath->store('surat', 'public');
+        
+        $reservasi->fill([
+            'mainpicposition' => $request->mainpicposition,
+            'mainpicname' => $request->mainpicname,
+            'suratpath' => $request->suratpath->hashName(),
+        ]);
         $request->session()->put('reservasi', $reservasi);
+  
   
         return redirect()->route('detailPeminjaman');
     }
+    
+
 
     public function stepThree(Request $request){
         $reservasi = $request->session()->get('reservasi');

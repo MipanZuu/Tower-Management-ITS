@@ -63,7 +63,7 @@
                     <h1 class="font-bold text-3xl mb-4">Informasi Penanggung Jawab</h1>
                     <p class="text-gray-500">Informasi Penanggung Jawab Utama dan Sekunder dibutuhkan untuk disertakan secara otomatis dalam Surat Ijin Peminjaman.</p>
                 </div>
-                <form action="{{ route('postCreateStepTwo') }}" method="POST">
+                <form action="{{ route('postCreateStepTwo') }}" enctype="multipart/form-data" method="POST">
                     @csrf
                     <div class="md:flex mb-6">
                         <div class="md:w-1/3">
@@ -98,32 +98,20 @@
                     <div class="md:flex mb-6">
                         <div class="md:w-1/3">
                             <label class="block text-gray-600 font-bold md:text-left mb-3 md:mb-0 pr-4" for="my-textfield">
-                            Jabatan Penanggung Jawab Sekunder
+                            Surat
                             </label>
                         </div>
                         <div class="md:w-2/3">
-                            <input class="form-input block w-full focus:bg-white border border-gray-300 px-2 py-1" id="secondpicposition" name="secondpicposition" type="text" value="">
-                            <p class="py-2 text-sm text-gray-600">Masukkan jabatan Penanggung Jawab Sekunder.</p>
-                            @if($errors->has('secondpicposition'))
-                                <div class="error py-2 text-sm text-red-600">{{ $errors->first('secondpicposition') }}</div>
+                            <input type="file" name="suratpath" id="suratpath">
+                            {{-- <input class="form-input block w-full focus:bg-white border border-gray-300 px-2 py-1" id="secondpicposition" name="secondpicposition" type="text" value=""> --}}
+                            <p class="py-2 text-sm text-gray-600">Masukkan Surat/Izin terkait Acara</p>
+                            @if($errors->has('suratpath'))
+                                <div class="error py-2 text-sm text-red-600">{{ $errors->first('suratpath') }}</div>
                             @endif
                         </div>
                     </div>
 
-                    <div class="md:flex mb-6">
-                        <div class="md:w-1/3">
-                            <label class="block text-gray-600 font-bold md:text-left mb-3 md:mb-0 pr-4" for="my-textfield">
-                            Nama Penanggung Jawab Sekunder
-                            </label>
-                        </div>
-                        <div class="md:w-2/3">
-                            <input class="form-input block w-full focus:bg-white border border-gray-300 px-2 py-1" id="secondpicname" name="secondpicname"  type="text" value="">
-                            <p class="py-2 text-sm text-gray-600">Masukkan nama lengkap Penanggung Jawab Sekunder.</p>
-                            @if($errors->has('secondpicname'))
-                                <div class="error py-2 text-sm text-red-600">{{ $errors->first('secondpicname') }}</div>
-                            @endif
-                        </div>
-                    </div>
+                   
 
                     <div class="md:flex md:items-center">
                         <div class="md:w-1/3"></div>

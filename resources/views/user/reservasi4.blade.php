@@ -68,7 +68,7 @@
                     <div class="md:flex mb-6">
                         <div class="md:w-1/3">
                             <label class="block text-gray-600 font-bold md:text-left mb-3 md:mb-0 pr-4" for="my-textfield">
-                            Organisasi yang Diwakilkan
+                            Unit/Organisasi
                             </label>
                         </div>
                         <div class="md:w-2/3">
@@ -110,9 +110,9 @@
                         <div class="md:w-2/3">
                             <select class="form-input block w-full focus:bg-white border border-gray-300 px-2 py-1" id="eventcategory" name="eventcategory">
                                 <option value="">Default</option>
-                                <option value="A">A</option>
-                                <option value="B">B</option>
-                                <option value="C">C</option>
+                                <option value="Urgent">Urgent</option>
+                                <option value="Medium">Medium</option>
+                                <option value="Low">Low</option>
                             </select>
                             @if($errors->has('eventcategory'))
                                 <div class="error py-2 text-sm text-red-600">{{ $errors->first('eventcategory') }}</div>

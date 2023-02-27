@@ -23,6 +23,7 @@ class Reservasi extends Model
             'email',
             'mainpicposition',
             'mainpicname',
+            'suratpath',
             'floornum',
             'roomname',
             'reservationstart',
