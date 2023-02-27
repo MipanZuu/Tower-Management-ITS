@@ -5,7 +5,7 @@
     <nav class="flex items-center justify-center flex-wrap p-5  w-full z-0 top-0  sm:justify-between">
 		<div class="flex items-center flex-shrink-0 text-white  mr-6">
 		<div>
-			<span class="text-black font-bold no-underline hover:text-white hover:no-underline text-2xl pl-2"><i class="em em-grinning"></i>List Reservasi</span>
+			<span class="text-black font-bold no-underline hover:no-underline text-2xl pl-2"><i class="em em-grinning"></i>List Reservasi</span>
 		</div>
 	</div>
     </nav>

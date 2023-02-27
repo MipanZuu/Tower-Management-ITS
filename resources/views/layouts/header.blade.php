@@ -31,7 +31,7 @@
 </head>
 <body class="bg-white-800 font-sans leading-normal tracking-normal">
 
-	<nav class="flex items-center justify-between flex-wrap bg-blue-900 p-2 w-full z-15 top-0 sticky">
+	<nav class="flex items-center justify-between flex-wrap bg-blue-900 p-2 w-full z-20 top-0 sticky">
 		<div class="flex items-center flex-shrink-0 text-white mr-6">
 		<div>
 			<img class="h-20 w-20" src="/pictures/itslogo.png" alt="Logo ITS">
