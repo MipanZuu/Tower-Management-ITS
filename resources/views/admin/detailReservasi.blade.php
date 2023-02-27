@@ -86,27 +86,6 @@
                         </div>
                     </div>
 
-                    <div class="md:flex mb-6">
-                        <div class="md:w-1/3">
-                            <label class="block text-gray-600 font-bold md:text-left mb-3 md:mb-0 pr-4" for="my-textfield">
-                                Nama Penanggungjawab 2  :
-                            </label>
-                        </div>
-                        <div class="md:w-2/3">
-                            <p class="py-2 text-sm text-gray-600">{{ $reservasis->secondpicname }}</p>
-                        </div>
-                    </div>
-
-                    <div class="md:flex mb-6">
-                        <div class="md:w-1/3">
-                            <label class="block text-gray-600 font-bold md:text-left mb-3 md:mb-0 pr-4" for="my-textfield">
-                                Jabatan Penanggungjawab 2   :
-                            </label>
-                        </div>
-                        <div class="md:w-2/3">
-                            <p class="py-2 text-sm text-gray-600">{{ $reservasis->secondpicposition }}</p>
-                        </div>
-                    </div>
 
                     <div class="md:flex mb-6">
                         <div class="md:w-1/3">
@@ -197,6 +176,17 @@
                         </div>
                         <div class="md:w-2/3">
                             <p class="py-2 text-sm text-gray-600">{{ $reservasis->eventdescription}} </p>
+                        </div>
+                    </div>
+
+                    <div class="md:flex mb-6">
+                        <div class="md:w-1/3">
+                            <label class="block text-gray-600 font-bold md:text-left mb-3 md:mb-0 pr-4" for="my-textfield">
+                               Surat keterangan :
+                            </label>
+                        </div>
+                        <div class="w-full md:w-3/4">
+                            <embed class="w-full md:w-3/4" height="500" weigth="400" src="{{ asset('storage/surat/'.$reservasis->suratpath) }}"  alt="pdf" />
                         </div>
                     </div>
 
