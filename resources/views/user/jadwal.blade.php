@@ -28,6 +28,7 @@
     </div>
 </div>
 
+<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js" integrity="sha256-lSjKY0/srUM9BE3dPm+c4fBo1dky2v27Gdjm2uoZaL0=" crossorigin="anonymous"></script>
    
 <script>
 
@@ -40,18 +41,20 @@ $(document).ready(function () {
     });
     var schedule = @json($event);
     var calendar = $('#calendar').fullCalendar({
-       defaultView:'agendaWeek',
+        timeZone:'local',
+        themeSystem: 'jquery-ui',
+        groupByResource: true,
+        defaultView:'agendaWeek',
         editable:false,
         header:{
             left:'agendaWeek,agendaDay',
-            center:'title',
+            center:'title, resources',
             right:'prev,next today'
         },
         events:schedule,
         eventRender: function(event, element) { 
             element.find('.fc-title').after("-<span class=\"myClass\">" + event.ruangan + "</span>"); 
         } ,
-       
         
     });
     $('.fc').css('background-color', 'white');

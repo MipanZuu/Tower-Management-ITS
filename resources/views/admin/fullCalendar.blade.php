@@ -81,6 +81,8 @@ $(document).ready(function () {
             right:'month,agendaWeek,agendaDay'
         },
         events:'/full-calendar',
+        timeZone:'local',
+        themeSystem: 'jquery-ui',
         selectable:true,
         selectHelper: true,
         select:function(start, end, allDay)
