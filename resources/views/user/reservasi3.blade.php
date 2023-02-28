@@ -87,22 +87,6 @@
                             <p class="py-2 text-sm text-gray-600">Pilih Lantai dari ruangan yang akan Anda gunakan.</p>
                         </div>
                     </div>
-                    <div class="md:flex mb-6">
-                        <div class="md:w-1/3">
-                            <label class="block text-gray-600 font-bold md:text-left mb-3 md:mb-0 pr-4" for="my-textfield">
-                            Ruangan
-                            </label>
-                        </div>
-                        <div class="md:w-2/3">
-                            <select  class="form-input block w-full focus:bg-white border border-gray-300 px-2 py-1" id="roomname" name="roomname">
-                             
-                            </select>
-                            @if($errors->has('roomname'))
-                                <div class="error py-2 text-sm text-red-600">{{ $errors->first('roomname') }}</div>
-                            @endif
-                            <p class="py-2 text-sm text-gray-600">Pilih Ruangan yang akan Anda gunakan.</p>
-                        </div>
-                    </div>
 
                     <div class="md:flex mb-6">
                         <div class="md:w-1/3">
@@ -134,6 +118,38 @@
                         </div>
                     </div>
 
+                    <div class="md:flex mb-6">
+                        <div class="md:w-1/3">
+                            <label class="block text-gray-600 font-bold md:text-left mb-3 md:mb-0 pr-4" for="my-textfield">
+                            Ruangan
+                            </label>
+                        </div>
+                        <div class="md:w-2/3">
+                            <section id="map">
+                                <div class="container m-auto">
+                                    <div class="flex justify-center mb-4 bg-gray-300" style="overflow: hidden; user-select: none; touch-action: none;">
+                                        <div class="relative h-64 md:h-auto" style="cursor: move; user-select: none; touch-action: none;">
+                                            <div class="absolute top-0 w-full h-full z-10">
+                                            <svg class="scale-10 md:scale-10" viewBox="0 0 1920 1100" preserveAspectRatio="none">
+                                                <polygon id="test" class="polygon roomAvailable" points="537.4213562373095,559.4213562373095 254.57864376269052,559.4213562373095 254.57864376269046,276.5786437626905 537.4213562373095,276.5786437626905" stroke="#000" stroke-width="1"/>
+                                                <polygon id="test1" class="polygon roomAvailable" points="841.4213562373095,559.4213562373095 558.5786437626905,559.4213562373095 558.5786437626905,276.5786437626905 841.4213562373095,276.5786437626905" stroke="#000" stroke-width="1"/>
+                                                
+                                            </svg> 
+                                            </div>
+                                            <img src="/pictures/aaaa-page-003.jpg" alt="">
+                                        </div>
+                                    </div>
+                                    @extends('modal.ruangan1')
+                                    @extends('modal.ruangan2')
+                                </div>
+                            </section>
+                            @if($errors->has('roomname'))
+                                <div class="error py-2 text-sm text-red-600">{{ $errors->first('roomname') }}</div>
+                            @endif
+                            <p class="py-2 text-sm text-gray-600">Pilih Ruangan yang akan Anda gunakan.</p>
+                        </div>
+                    </div>
+
                     <div class="md:flex md:items-center">
                         <div class="md:w-1/3"></div>
                         <div class="md:w-2/3">
@@ -159,25 +175,25 @@
         }
         });
         $(document).ready(function () {
-        $('#floornum').on('change',function(e) {
-        var floorID = e.target.value;
+            $('#floornum').on('change',function(e) {
+                var floorID = e.target.value;
         $.ajax({
-        url:"{{ route('detailPeminjamanAjax') }}",
-        type:"POST",
-        data: {
-        floornum: floorID
+            url:"{{ route('detailPeminjamanAjax') }}",
+            type:"POST",
+            data: {
+            floornum: floorID
         },
         dataType: 'json',
         success:function (result) {
-        $('#roomname').empty();
-        $('#roomname').append('   <option>Default</option>'); 
-        $.each(result.ruangans, function(key,value){
-        $('#roomname').append('<option value="'+value.roomname+'">'+value.roomname+'</option>');
-        })
+            $('#roomname').empty();
+            $('#roomname').append('   <option>Default</option>'); 
+            $.each(result.ruangans, function(key,value){
+            $('#roomname').append('<option value="'+value.roomname+'">'+value.roomname+'</option>');
+            })
         }
-        })
-        });
-        });
+            })
+            });
+            });
         </script>
 
       {{-- <script>
@@ -209,4 +225,20 @@
         });
         });
     </script> --}}
+    <script>
+    document.getElementById('test').onclick = function(){
+        document.getElementById("kelas1").classList.toggle("hidden");
+    }
+    document.getElementById('test1').onclick = function(){
+        document.getElementById("kelas2").classList.toggle("hidden");
+    }
+
+    document.getElementById('buttonClose1').onclick = function(){
+        document.getElementById("kelas1").classList.toggle("hidden");
+    }
+
+    document.getElementById('buttonClose2').onclick = function(){
+        document.getElementById("kelas2").classList.toggle("hidden");
+    }
+</script>
 @endsection

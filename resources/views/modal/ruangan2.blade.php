@@ -1,3 +1,4 @@
+<form id="submitClass" method="get" accept-charset="utf-8">
 <div id="kelas2" tabindex="-1" aria-hidden="true" class="hidden fixed top-0 left-0 right-0 z-50 w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-modal md:h-full">
     <div class="relative w-full h-full m-auto max-w-2xl md:h-auto">
         <!-- Modal content -->
@@ -25,9 +26,34 @@
                 </p>
             </div>
             <!-- Modal footer -->
-            <div class="flex items-center p-6 space-x-2 border-t border-gray-200 rounded-b dark:border-gray-600">
-                <button data-modal-hide="defaultModal" type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Booking Sekarang</button>
+            <div  class="flex items-center p-6 space-x-2 border-t border-gray-200 rounded-b dark:border-gray-600">
+                <input type="hidden" id="roomname" name="roomname" value="Kelas 2">   
+                <button data-modal-hide="defaultModal" type="submit" id="submitted" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Booking Sekarang</button>
             </div>
         </div>
     </div>
 </div>
+</form>
+
+<script>
+$(document).ready(function() {
+        $('#submitClass').on('submit', function() {
+           var roomname = $('#roomname').val();
+           if(roomname) {
+               $.ajax({
+                   url: '/reservasi/detailPeminjaman/'+roomname,
+                   type: "GET",
+                   data : {"_token":"{{ csrf_token() }}"},
+                   dataType: "json",
+                   success:function(data)
+                   {
+                    alert("Sukses memilih ruangan");
+                    document.getElementById("kelas2").classList.toggle("hidden");
+                 }
+               });
+           }else{
+             $('#roomname').empty();
+           }
+        });
+        });
+</script>

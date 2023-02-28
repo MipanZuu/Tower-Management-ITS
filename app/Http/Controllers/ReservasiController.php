@@ -75,12 +75,17 @@ class ReservasiController extends Controller
   
         return redirect()->route('detailPeminjaman');
     }
+
+    public function selectRoom(Request $request){
+        $roomname = $request->roomname;
+        dd($roomname);
+        return view ('user.reservasi3');
+    }
     
 
 
     public function stepThree(Request $request){
         $reservasi = $request->session()->get('reservasi');
-
         $lantais = Ruangan::select('floornum')->distinct('floornum')->where('id','!=',NULL)->get();
         
         return view ('user.reservasi3',compact('reservasi','lantais'));

@@ -2,47 +2,6 @@
 @section('content')
 <section id="map">
     <div class="container m-auto">
-        <div class="mb-10 md:mb-16 pt-12">
-            <div class="text-center">
-                <h1>Pilih Kelas</h1>
-                <p>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cumque necessitatibus in est saepe quasi. Architecto repudiandae <br> temporibus doloribus quibusdam possimus saepe optio nihil vel. Error, excepturi facilis? Minima, quo qui!
-                </p>
-            </div>
-        </div>
-        
-        <div class="flex justify-center md:gap-8 gap-4">
-            <div class="text-sm md:text-base font-jost-r">
-                <div class="text-bold">o</div>
-                <div class="inline-block align-middle md:text-base text-sm">
-                    Ruangan Tersedia:
-                    <strong>9999</strong>
-                </div>
-            </div>
-            <div class="text-sm md:text-base font-jost-r">
-                <div class="text-bold">o</div>
-                <div class="inline-block align-middle md:text-base text-sm">
-                    Ruangan Tersedia:
-                    <strong>9999</strong>
-                </div>
-            </div>
-        </div>
-        
-        <div class="flex justify-center md:gap-8 gap-4 mt-3">
-            <div class="text-sm md:textbase">
-                <div class="text-bold">o</div>
-                <div class="text-bold">o</div>
-            </div>
-            <div class="text-sm md:textbase">
-                <div class="text-bold">o</div>
-                <div class="text-bold">o</div>
-            </div>
-            <div class="text-sm md:textbase">
-                <div class="text-bold">o</div>
-                <div class="text-bold">o</div>
-            </div>
-        </div>
-
         <div class="flex justify-center mb-4 bg-gray-300" style="overflow: hidden; user-select: none; touch-action: none;">
             <div class="relative h-64 md:h-auto" style="cursor: move; user-select: none; touch-action: none;">
                 <div class="absolute top-0 w-full h-full z-10">
