@@ -54,12 +54,17 @@
                 <img src="pictures/aaaa-page-003.jpg" alt="">
             </div>
         </div>
+        @extends('modal.ruangan1')
     </div>
 
 </section>
 <script>
     document.getElementById('test').onclick = function(){
-        document.getElementById("test").classList.toggle("hidden");
+        document.getElementById("modalShow").classList.toggle("hidden");
+    }
+
+    document.getElementById('buttonClose').onclick = function(){
+        document.getElementById("modalShow").classList.toggle("hidden");
     }
 </script>
 @endsection

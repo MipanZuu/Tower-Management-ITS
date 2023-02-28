@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Event;
 use App\Models\Ruangan;
+use App\Models\Rooms;
 use Carbon\Carbon;
 
 class RuanganController extends Controller
@@ -18,5 +19,10 @@ class RuanganController extends Controller
         ->get(['ruangan', 'lantai']);
 
         return view('admin.ruanganIndex', compact('ruangans', 'events'));
+    }
+
+    public function detailReservasi($id) {
+        $data = Rooms::where('id','=',$id)->first();
+        return view('modal.ruangan1', ['rooms'=>$data]);
     }
 }
