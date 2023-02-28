@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CalendarController;
 use App\Http\Controllers\ReservasiController;
 use App\Http\Controllers\RuanganController;
+use App\Http\Controllers\ReportController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -49,6 +50,11 @@ Route::controller(ReservasiController::class)->group(function () {
 /* admin */
 Route::controller(RuanganController::class)->group(function () {
     Route::get('/viewClass','index')->name('viewClass');
+});
+
+/*Report Page*/
+Route::controller(ReportController::class)->group(function () {
+    Route::get('/viewReport','index')->name('viewReport');
 });
 
 /*Login*/

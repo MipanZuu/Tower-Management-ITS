@@ -21,6 +21,7 @@
 		<link rel="stylesheet" type="text/css" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/themes/redmond/jquery-ui.css">
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.js"></script>
+		<script src="https://code.highcharts.com/highcharts.js"></script>
         @vite('resources/css/app.css')
 
         <style>
@@ -85,7 +86,7 @@
 				</a>
          </li>
          <li>
-		 <a class="flex items-center w-full h-12 px-3 mt-2 rounded hover:bg-blue-700 hover:text-gray-300" href="#">
+		 <a class="flex items-center w-full h-12 px-3 mt-2 rounded hover:bg-blue-700 hover:text-gray-300 {{ Request::is('viewReport') ? 'active': '';}}" href="{{route('viewReport')}}" >
 				<svg class="w-8 h-8 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 70 55" fill="currentColor">
 					<path d="M24 33.95q.7 0 1.225-.525.525-.525.525-1.225 0-.7-.525-1.225Q24.7 30.45 24 30.45q-.7 0-1.225.525-.525.525-.525 1.225 0 .7.525 1.225.525.525 1.225.525Zm-1.5-7.2h3V13.6h-3ZM16.5 42 6 31.5v-15L16.5 6h15L42 16.5v15L31.5 42Zm1.25-3h12.5L39 30.25v-12.5L30.25 9h-12.5L9 17.75v12.5ZM24 24Z" />
 				</svg>
