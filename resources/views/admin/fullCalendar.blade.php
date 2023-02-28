@@ -90,7 +90,6 @@ $(document).ready(function () {
             var title = prompt('Event Judul:');
             var lantai = prompt('Lantai Gedung:');
             var ruangan = prompt('Ruangan Event Berlangsung:');
-
             if(title && lantai && ruangan)
             {
                 var start = $.fullCalendar.formatDate(start, 'Y-MM-DD HH:mm:ss');
