@@ -41,8 +41,8 @@ $(document).ready(function() {
            var roomname = $('#roomname').val();
            if(roomname) {
                $.ajax({
-                   url: '/reservasi/detailPeminjaman/'+roomname,
-                   type: "GET",
+                   url: '/reservasi/detailPeminjaman/',
+                   type: "POST",
                    data : {"_token":"{{ csrf_token() }}"},
                    dataType: "json",
                    success:function(data)
