@@ -17,11 +17,8 @@ class Ruangan extends Model
         'roomname',    
         'floornum',
         'capacity',
-        'building',
-        'department',
-        'faculty',
-
-
+        'description',
+        'picture',
     ];
 
 }

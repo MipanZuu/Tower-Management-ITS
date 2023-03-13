@@ -18,9 +18,8 @@ return new class extends Migration
             $table->string('roomname');
             $table->integer('floornum');
             $table->integer('capacity');
-            $table->string('building')->nullable();
-            $table->string('department')->nullable();
-            $table->string('faculty')->nullable();
+            $table->string('description');
+            $table->string('picture');
         });
     }
 
