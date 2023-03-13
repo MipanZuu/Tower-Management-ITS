@@ -50,6 +50,11 @@ Route::controller(ReservasiController::class)->group(function () {
 /* admin */
 Route::controller(RuanganController::class)->group(function () {
     Route::get('/viewClass','index')->name('viewClass');
+    Route::get('/viewClass/Lantai4','lantai4')->name('lantai4View');
+    Route::get('/viewClass/Lantai5','lantai5')->name('lantai5View');
+    Route::get('/viewClass/Lantai6','lantai6')->name('lantai6View');
+    Route::get('/viewClass/Lantai7','lantai7')->name('lantai7View');
+    Route::get('/viewClass/Lantai8','lantai8')->name('lantai8View');
 });
 
 /*Report Page*/

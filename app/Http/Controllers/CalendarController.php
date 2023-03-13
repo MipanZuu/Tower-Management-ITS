@@ -25,7 +25,7 @@ class CalendarController extends Controller
     	{
     		$data = Event::whereDate('start', '>=', $request->start)
                        ->whereDate('end',   '<=', $request->end)
-					   ->where('lantai', 'LIKE', $request->lantai)
+					   ->where('lantai', '=', 1)
                        ->get(['id', 'title', 'lantai', 'ruangan', 'start', 'end']);
             return response()->json($data);
     	}
