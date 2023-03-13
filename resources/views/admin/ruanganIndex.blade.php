@@ -38,7 +38,7 @@
                 <div class="flex justify-center mb-1">
                   <p class="leading-relaxed font-extrabold">{{$ruangan->roomname}}</p>
                 </div>
-            <img class="h-25 rounded w-full object-cover object-center mb-2" src="https://dummyimage.com/720x400" alt="content">
+            <img class="h-40 rounded w-full object-cover object-center mb-2" src="{{$ruangan->picture}}" alt="content">
             <div class="flex justify-center">
               @php($isEmpty = 1)
               @foreach($events as $event)
