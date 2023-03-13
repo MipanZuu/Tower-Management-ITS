@@ -20,8 +20,8 @@
                 </p>
                 <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
                     <ol>
-                        <li>Kapasitas 20 Orang</li>
-                        <li>Ac 2</li>
+                        <li>{{ $ruangans->capacity }}</li>
+                        <li>{{ $ruangans->description }}</li>
                     </ol>
                 </p>
             </div>

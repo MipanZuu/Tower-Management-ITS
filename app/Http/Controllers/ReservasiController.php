@@ -87,8 +87,8 @@ class ReservasiController extends Controller
     public function stepThree(Request $request){
         $reservasi = $request->session()->get('reservasi');
         $lantais = Ruangan::select('floornum')->distinct('floornum')->where('id','!=',NULL)->get();
-        
-        return view ('user.reservasi3',compact('reservasi','lantais'));
+        $ruangans = Ruangan::all();
+        return view ('user.reservasi3',compact('reservasi','lantais', 'ruangans'));
     }
 
 
