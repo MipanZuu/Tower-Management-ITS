@@ -30,7 +30,7 @@ class ReportController extends Controller
         // ->orderBy('ruangans.roomname', 'ASC')
         // ->get();
         $coba = Ruangan::query()->select('ruangans.roomname',
-        DB::raw('count(reservasis.reservationid) as jres'))
+        DB::raw('COUNT(case when Year(reservationstart) = Year(curdate()) AND MONTH(reservationstart) = MONTH(curdate()) then 1 else null end) as jres'))
         // ->whereYear('reservasis.reservationstart', Carbon::now()->year)
         // ->whereMonth('reservasis.reservationstart', Carbon::now()->month)
         ->leftJoin('reservasis','reservasis.roomname','ruangans.roomname')
